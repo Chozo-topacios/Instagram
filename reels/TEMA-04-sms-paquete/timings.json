@@ -1,0 +1,83 @@
+{
+ "duration": 37.085,
+ "lines": [
+  {
+   "scene": 0,
+   "text": "¿Te llegó un SMS de que tu paquete no se pudo entregar?",
+   "start": 0.25,
+   "end": 3.338
+  },
+  {
+   "scene": 0,
+   "text": "No lo abras.",
+   "start": 3.458,
+   "end": 4.283
+  },
+  {
+   "scene": 1,
+   "text": "Así se ven: dicen que tu paquete está retenido.",
+   "start": 4.633,
+   "end": 7.616
+  },
+  {
+   "scene": 1,
+   "text": "Te piden pagar un costo mínimo en un enlace raro.",
+   "start": 7.736,
+   "end": 10.418
+  },
+  {
+   "scene": 1,
+   "text": "Y te meten prisa.",
+   "start": 10.538,
+   "end": 11.711
+  },
+  {
+   "scene": 2,
+   "text": "Ese pago mínimo no es el objetivo.",
+   "start": 12.061,
+   "end": 14.209
+  },
+  {
+   "scene": 2,
+   "text": "Quieren los datos de tu tarjeta completa.",
+   "start": 14.329,
+   "end": 16.662
+  },
+  {
+   "scene": 3,
+   "text": "Y estos mensajes llegan a su pico entre Black Friday y Cyber Monday.",
+   "start": 17.012,
+   "end": 21.447
+  },
+  {
+   "scene": 3,
+   "text": "Justo cuando sí esperas paquetes.",
+   "start": 21.567,
+   "end": 23.553
+  },
+  {
+   "scene": 4,
+   "text": "Uno: no toques el enlace.",
+   "start": 23.903,
+   "end": 25.632
+  },
+  {
+   "scene": 4,
+   "text": "Dos: rastrea tu pedido en la app oficial.",
+   "start": 25.752,
+   "end": 28.992
+  },
+  {
+   "scene": 4,
+   "text": "Tres: reporta, borra y bloquea.",
+   "start": 29.112,
+   "end": 31.77
+  },
+  {
+   "scene": 5,
+   "text": "Guárdalo y compártelo con quien está esperando un paquete.",
+   "start": 32.12,
+   "end": 35.685
+  }
+ ]
+}

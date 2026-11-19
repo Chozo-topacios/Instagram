@@ -1,0 +1,127 @@
+{
+ "handle": "@tu_cuenta",
+ "fecha": "NOV 2026",
+ "velocidad": 0.86,
+ "id": "TEMA-05",
+ "titulo": "Estafas con el lanzamiento de GTA 6",
+ "formato": "mito-realidad",
+ "tema": "noche",
+ "subtitulos": "karaoke",
+ "transicion": "slide",
+ "insignia": "Alerta gamer",
+ "escenas": [
+  {
+   "tipo": "titular",
+   "modo": "peligro",
+   "icono": "regalo",
+   "texto": "¿*GTA 6 gratis* o con acceso anticipado?",
+   "sub": "Te están *estafando*.",
+   "tam": 92,
+   "lineas": [
+    {
+     "texto": "¿GTA 6 gratis o con acceso anticipado?",
+     "voz": "¿Ge te a seis gratis, o con acceso anticipado?"
+    },
+    {
+     "texto": "Te están estafando."
+    }
+   ]
+  },
+  {
+   "tipo": "titular",
+   "modo": "peligro",
+   "icono": "alerta",
+   "texto": "Alerta por el *lanzamiento*",
+   "pills": [
+    "Promos falsas",
+    "Acceso anticipado",
+    "Descargas"
+   ],
+   "lineas": [
+    {
+     "texto": "Expertos en Reino Unido ya alertan de estafas con el lanzamiento de GTA 6.",
+     "voz": "Expertos en el Reino Unido ya alertan de estafas con el lanzamiento de ge te a seis."
+    }
+   ]
+  },
+  {
+   "tipo": "mito",
+   "modo": "peligro",
+   "mito": "Hay códigos gratis en este enlace",
+   "realidad": "Es para robar tu cuenta y tus datos",
+   "lineas": [
+    {
+     "texto": "Mito: hay códigos gratis en este enlace."
+    },
+    {
+     "texto": "Realidad: es para robar tu cuenta y tus datos."
+    }
+   ]
+  },
+  {
+   "tipo": "mito",
+   "modo": "peligro",
+   "mito": "Esta descarga es el juego completo",
+   "realidad": "Es malware disfrazado",
+   "lineas": [
+    {
+     "texto": "Mito: esta descarga es el juego completo."
+    },
+    {
+     "texto": "Realidad: es malware disfrazado.",
+     "voz": "Realidad: es malguer disfrazado."
+    }
+   ]
+  },
+  {
+   "tipo": "checklist",
+   "modo": "calma",
+   "insignia": "Juega seguro",
+   "texto": "Juega *seguro*",
+   "pasos": [
+    {
+     "t": "Compra solo en tiendas oficiales",
+     "d": "la tienda de tu consola o PC"
+    },
+    {
+     "t": "Activa la verificación en 2 pasos",
+     "d": "en tu cuenta de juego"
+    },
+    {
+     "t": "Nada gratis por mensaje",
+     "d": "gratis + urgente = estafa"
+    }
+   ],
+   "lineas": [
+    {
+     "texto": "Compra solo en tiendas oficiales."
+    },
+    {
+     "texto": "Activa la verificación en dos pasos."
+    },
+    {
+     "texto": "Y nada gratis por mensaje."
+    }
+   ]
+  },
+  {
+   "tipo": "cta",
+   "modo": "calma",
+   "insignia": "Juega seguro",
+   "iconos": [
+    "compartir",
+    "guardar",
+    "seguir"
+   ],
+   "texto": "Mándaselo a tu *amigo gamer*",
+   "sub": "antes de que haga clic",
+   "tam": 96,
+   "lineas": [
+    {
+     "texto": "Mándaselo a tu amigo gamer antes de que haga clic.",
+     "voz": "Mándaselo a tu amigo guéimer, antes de que haga clic."
+    }
+   ]
+  }
+ ]
+}

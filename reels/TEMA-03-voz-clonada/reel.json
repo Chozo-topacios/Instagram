@@ -1,0 +1,120 @@
+{
+ "handle": "@tu_cuenta",
+ "fecha": "NOV 2026",
+ "velocidad": 0.86,
+ "id": "TEMA-03",
+ "titulo": "Estafa con voz clonada por IA",
+ "formato": "simulacion",
+ "tema": "papel",
+ "subtitulos": "barra",
+ "transicion": "slide",
+ "insignia": "Estafa con IA",
+ "escenas": [
+  {
+   "tipo": "titular",
+   "modo": "peligro",
+   "icono": "telefono",
+   "texto": "Si tu mamá te llama *llorando*…",
+   "sub": "puede *no* ser tu mamá.",
+   "lineas": [
+    {
+     "texto": "Si tu mamá te llama llorando pidiendo dinero…"
+    },
+    {
+     "texto": "…puede no ser tu mamá."
+    }
+   ]
+  },
+  {
+   "tipo": "contador",
+   "modo": "peligro",
+   "valor": 3,
+   "sufijo": " seg",
+   "etiqueta": "de audio bastan para *clonar una voz*",
+   "icono": "robot",
+   "tam": 220,
+   "lineas": [
+    {
+     "texto": "Con IA bastan unos 3 segundos de tu voz, sacados de un video en redes, para clonarla."
+    }
+   ]
+  },
+  {
+   "tipo": "chat",
+   "modo": "peligro",
+   "texto": "Así suena la estafa",
+   "remitente": "Mamá",
+   "detalle": "Nota de voz · ahora",
+   "mensajes": [
+    {
+     "texto": "🎤 Mi amor, tuve un accidente, necesito dinero *YA*",
+     "alerta": "Urgencia"
+    },
+    {
+     "texto": "No le digas a nadie, ¿sí?",
+     "alerta": "Secreto"
+    },
+    {
+     "texto": "Mándalo a esta cuenta *nueva*",
+     "alerta": "Cuenta nueva"
+    }
+   ],
+   "lineas": [
+    {
+     "texto": "Te pide dinero urgente."
+    },
+    {
+     "texto": "Te pide que no le cuentes a nadie."
+    },
+    {
+     "texto": "Y que lo mandes a una cuenta nueva."
+    }
+   ]
+  },
+  {
+   "tipo": "titular",
+   "modo": "peligro",
+   "icono": "dinero",
+   "texto": "*US$129 millones*",
+   "sub": "fraude del que acusan a 3 hombres en EE. UU. imitando voces de directivos",
+   "tam": 120,
+   "lineas": [
+    {
+     "texto": "En EE. UU. acusan a 3 hombres de un fraude de más de 129 millones de dólares imitando voces.",
+     "voz": "En Estados Unidos acusan a tres hombres de un fraude de más de ciento veintinueve millones de dólares, imitando voces."
+    }
+   ]
+  },
+  {
+   "tipo": "escudo",
+   "modo": "calma",
+   "insignia": "Cómo protegerte",
+   "texto": "Creen una *palabra clave* familiar",
+   "sub": "y si dudas: cuelga y llama tú",
+   "lineas": [
+    {
+     "texto": "La solución: acuerden una palabra clave en familia."
+    },
+    {
+     "texto": "Y si dudas, cuelga y llama tú al número de siempre."
+    }
+   ]
+  },
+  {
+   "tipo": "cta",
+   "modo": "calma",
+   "insignia": "Cómo protegerte",
+   "iconos": [
+    "compartir",
+    "guardar"
+   ],
+   "texto": "Mándaselo a tu *familia*",
+   "sub": "y elijan su palabra clave hoy",
+   "lineas": [
+    {
+     "texto": "Mándale este video a tu familia y elijan su palabra clave hoy."
+    }
+   ]
+  }
+ ]
+}

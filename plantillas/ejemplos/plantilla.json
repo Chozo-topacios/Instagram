@@ -1,0 +1,27 @@
+{
+ "id": "TEMA-XX",
+ "titulo": "Título interno",
+ "formato": "alerta",
+ "tema": "noche",
+ "subtitulos": "caja",
+ "transicion": "fade",
+ "insignia": "Alerta de ciberseguridad",
+ "handle": "@tu_cuenta",
+ "fecha": "MES AAAA",
+ "velocidad": 0.86,
+ "escenas": [
+  {"tipo": "titular", "modo": "peligro", "icono": "alerta", "texto": "Gancho con *palabra clave*", "sub": "segunda frase",
+   "lineas": [{"texto": "Frase 1 del gancho", "voz": "pronunciación opcional"}, {"texto": "Frase 2"}]},
+  {"tipo": "contador", "modo": "peligro", "valor": 100, "prefijo": "+", "etiqueta": "lo que mide el número", "puntos": true,
+   "lineas": [{"texto": "Explica la cifra."}]},
+  {"tipo": "chat", "modo": "peligro", "remitente": "Banco", "detalle": "SMS", "mensajes": [
+     {"texto": "Mensaje 1", "alerta": "Bandera roja"}, {"texto": "Abre [enlace-falso.com]", "alerta": "Enlace raro"}],
+   "lineas": [{"texto": "Línea por mensaje 1"}, {"texto": "Línea por mensaje 2"}]},
+  {"tipo": "escudo", "modo": "calma", "insignia": "Cómo protegerte", "texto": "La *solución*", "sub": "en pocas palabras",
+   "lineas": [{"texto": "Mensaje de calma."}, {"texto": "Qué hacer en una frase."}]},
+  {"tipo": "checklist", "modo": "calma", "texto": "Haz esto *hoy*", "pasos": [{"t": "Paso 1", "d": "detalle"}, {"t": "Paso 2"}, {"t": "Paso 3"}],
+   "lineas": [{"texto": "Uno: …"}, {"texto": "Dos: …"}, {"texto": "Tres: …"}]},
+  {"tipo": "cta", "modo": "calma", "texto": "*Guárdalo* y compártelo", "sub": "con quien …",
+   "lineas": [{"texto": "Guarda este video y compártelo con …"}]}
+ ]
+}

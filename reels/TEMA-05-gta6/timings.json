@@ -1,0 +1,71 @@
+{
+ "duration": 33.048,
+ "lines": [
+  {
+   "scene": 0,
+   "text": "¿GTA 6 gratis o con acceso anticipado?",
+   "start": 0.25,
+   "end": 3.199
+  },
+  {
+   "scene": 0,
+   "text": "Te están estafando.",
+   "start": 3.319,
+   "end": 4.573
+  },
+  {
+   "scene": 1,
+   "text": "Expertos en Reino Unido ya alertan de estafas con el lanzamiento de GTA 6.",
+   "start": 4.923,
+   "end": 9.462
+  },
+  {
+   "scene": 2,
+   "text": "Mito: hay códigos gratis en este enlace.",
+   "start": 9.812,
+   "end": 12.622
+  },
+  {
+   "scene": 2,
+   "text": "Realidad: es para robar tu cuenta y tus datos.",
+   "start": 12.742,
+   "end": 16.062
+  },
+  {
+   "scene": 3,
+   "text": "Mito: esta descarga es el juego completo.",
+   "start": 16.412,
+   "end": 19.257
+  },
+  {
+   "scene": 3,
+   "text": "Realidad: es malware disfrazado.",
+   "start": 19.377,
+   "end": 21.606
+  },
+  {
+   "scene": 4,
+   "text": "Compra solo en tiendas oficiales.",
+   "start": 21.956,
+   "end": 23.906
+  },
+  {
+   "scene": 4,
+   "text": "Activa la verificación en dos pasos.",
+   "start": 24.026,
+   "end": 26.29
+  },
+  {
+   "scene": 4,
+   "text": "Y nada gratis por mensaje.",
+   "start": 26.41,
+   "end": 28.117
+  },
+  {
+   "scene": 5,
+   "text": "Mándaselo a tu amigo gamer antes de que haga clic.",
+   "start": 28.467,
+   "end": 31.648
+  }
+ ]
+}

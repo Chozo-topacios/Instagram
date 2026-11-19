@@ -1,0 +1,51 @@
+1
+00:00:00,250 --> 00:00:03,338
+¿Te llegó un SMS de que tu paquete no se pudo entregar?
+
+2
+00:00:03,458 --> 00:00:04,283
+No lo abras.
+
+3
+00:00:04,633 --> 00:00:07,616
+Así se ven: dicen que tu paquete está retenido.
+
+4
+00:00:07,736 --> 00:00:10,418
+Te piden pagar un costo mínimo en un enlace raro.
+
+5
+00:00:10,538 --> 00:00:11,711
+Y te meten prisa.
+
+6
+00:00:12,061 --> 00:00:14,209
+Ese pago mínimo no es el objetivo.
+
+7
+00:00:14,329 --> 00:00:16,662
+Quieren los datos de tu tarjeta completa.
+
+8
+00:00:17,012 --> 00:00:21,447
+Y estos mensajes llegan a su pico entre Black Friday y Cyber Monday.
+
+9
+00:00:21,567 --> 00:00:23,553
+Justo cuando sí esperas paquetes.
+
+10
+00:00:23,903 --> 00:00:25,632
+Uno: no toques el enlace.
+
+11
+00:00:25,752 --> 00:00:28,992
+Dos: rastrea tu pedido en la app oficial.
+
+12
+00:00:29,112 --> 00:00:31,770
+Tres: reporta, borra y bloquea.
+
+13
+00:00:32,120 --> 00:00:35,685
+Guárdalo y compártelo con quien está esperando un paquete.

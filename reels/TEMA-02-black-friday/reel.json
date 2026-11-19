@@ -1,0 +1,130 @@
+{
+ "handle": "@tu_cuenta",
+ "fecha": "NOV 2026",
+ "velocidad": 0.86,
+ "id": "TEMA-02",
+ "titulo": "Tiendas falsas de Black Friday",
+ "formato": "top3",
+ "tema": "neon",
+ "subtitulos": "karaoke",
+ "transicion": "zoom",
+ "insignia": "Alerta Black Friday",
+ "escenas": [
+  {
+   "tipo": "titular",
+   "modo": "peligro",
+   "icono": "regalo",
+   "texto": "Esa oferta de Black Friday al *80%*…",
+   "sub": "puede ser una tienda que *no existe*.",
+   "lineas": [
+    {
+     "texto": "Esa oferta de Black Friday al 80%…",
+     "voz": "Esa oferta de blac fraidei, al ochenta por ciento…"
+    },
+    {
+     "texto": "…puede ser una tienda que no existe."
+    }
+   ]
+  },
+  {
+   "tipo": "contador",
+   "modo": "peligro",
+   "valor": 4000,
+   "prefijo": "+",
+   "etiqueta": "páginas nuevas con nombres de *Black Friday*",
+   "puntos": true,
+   "icono": "alerta",
+   "tam": 180,
+   "lineas": [
+    {
+     "texto": "Ya hay más de 4.000 páginas nuevas con nombres de Black Friday.",
+     "voz": "Ya hay más de cuatro mil páginas nuevas con nombres de blac fraidei."
+    },
+    {
+     "texto": "Y casi 1 de cada 5 es riesgosa."
+    }
+   ]
+  },
+  {
+   "tipo": "titular",
+   "modo": "peligro",
+   "icono": "anzuelo",
+   "texto": "*+82%* de correos falsos",
+   "sub": "solo en la 1.ª semana de noviembre",
+   "tam": 110,
+   "lineas": [
+    {
+     "texto": "Los correos falsos de ofertas subieron un 82%…",
+     "voz": "Los correos falsos de ofertas subieron un ochenta y dos por ciento,"
+    },
+    {
+     "texto": "…en solo una semana."
+    }
+   ]
+  },
+  {
+   "tipo": "top",
+   "modo": "peligro",
+   "texto": "3 señales de *tienda falsa*",
+   "cuenta_atras": true,
+   "items": [
+    {
+     "t": "Precio demasiado bueno",
+     "d": "80% en lo más nuevo",
+     "icono": "dinero"
+    },
+    {
+     "t": "Dirección web rara",
+     "d": "letras cambiadas o dominio extraño",
+     "icono": "ojo"
+    },
+    {
+     "t": "Sin contacto ni devoluciones",
+     "d": "ni teléfono, ni dirección",
+     "icono": "usuario"
+    }
+   ],
+   "lineas": [
+    {
+     "texto": "Tres: precios demasiado buenos para ser reales."
+    },
+    {
+     "texto": "Dos: una dirección web rara, con letras cambiadas."
+    },
+    {
+     "texto": "Uno: no tiene teléfono, ni dirección, ni política de devoluciones."
+    }
+   ]
+  },
+  {
+   "tipo": "escudo",
+   "modo": "calma",
+   "insignia": "Cómo protegerte",
+   "texto": "Entra desde la *app oficial*",
+   "sub": "o escribiendo tú la dirección",
+   "lineas": [
+    {
+     "texto": "Mejor: entra desde la app oficial, o escribiendo tú la dirección.",
+     "voz": "Mejor: entra desde la ap oficial, o escribiendo tú la dirección."
+    },
+    {
+     "texto": "Nunca desde un anuncio o un enlace."
+    }
+   ]
+  },
+  {
+   "tipo": "cta",
+   "modo": "calma",
+   "insignia": "Cómo protegerte",
+   "texto": "*Guárdalo* antes del viernes",
+   "sub": "y mándaselo a quien compra todo en oferta",
+   "tam": 96,
+   "lineas": [
+    {
+     "texto": "Guarda este video antes del Black Friday y mándaselo a quien compra todo en oferta.",
+     "voz": "Guarda este video antes del blac fraidei, y mándaselo a quien compra todo en oferta."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "duration": 42.746,
+ "lines": [
+  {
+   "scene": 0,
+   "text": "Esa oferta de Black Friday al 80%…",
+   "start": 0.25,
+   "end": 3.094
+  },
+  {
+   "scene": 0,
+   "text": "…puede ser una tienda que no existe.",
+   "start": 3.214,
+   "end": 5.2
+  },
+  {
+   "scene": 1,
+   "text": "Ya hay más de 4.000 páginas nuevas con nombres de Black Friday.",
+   "start": 5.55,
+   "end": 9.335
+  },
+  {
+   "scene": 1,
+   "text": "Y casi 1 de cada 5 es riesgosa.",
+   "start": 9.455,
+   "end": 12.253
+  },
+  {
+   "scene": 2,
+   "text": "Los correos falsos de ofertas subieron un 82%…",
+   "start": 12.603,
+   "end": 16.469
+  },
+  {
+   "scene": 2,
+   "text": "…en solo una semana.",
+   "start": 16.589,
+   "end": 17.947
+  },
+  {
+   "scene": 3,
+   "text": "Tres: precios demasiado buenos para ser reales.",
+   "start": 18.297,
+   "end": 21.409
+  },
+  {
+   "scene": 3,
+   "text": "Dos: una dirección web rara, con letras cambiadas.",
+   "start": 21.529,
+   "end": 25.244
+  },
+  {
+   "scene": 3,
+   "text": "Uno: no tiene teléfono, ni dirección, ni política de devoluciones.",
+   "start": 25.364,
+   "end": 29.601
+  },
+  {
+   "scene": 4,
+   "text": "Mejor: entra desde la app oficial, o escribiendo tú la dirección.",
+   "start": 29.951,
+   "end": 33.957
+  },
+  {
+   "scene": 4,
+   "text": "Nunca desde un anuncio o un enlace.",
+   "start": 34.077,
+   "end": 36.178
+  },
+  {
+   "scene": 5,
+   "text": "Guarda este video antes del Black Friday y mándaselo a quien compra todo en oferta.",
+   "start": 36.528,
+   "end": 41.346
+  }
+ ]
+}

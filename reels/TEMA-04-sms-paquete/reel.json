@@ -1,0 +1,138 @@
+{
+ "handle": "@tu_cuenta",
+ "fecha": "NOV 2026",
+ "velocidad": 0.86,
+ "id": "TEMA-04",
+ "titulo": "SMS falso de paquete",
+ "formato": "es-estafa",
+ "tema": "terminal",
+ "subtitulos": "caja",
+ "transicion": "glitch",
+ "insignia": "¿Es estafa?",
+ "escenas": [
+  {
+   "tipo": "titular",
+   "modo": "peligro",
+   "icono": "paquete",
+   "texto": "¿Te llegó un SMS de que tu *paquete* no se pudo entregar?",
+   "sub": "*No lo abras.*",
+   "tam": 86,
+   "lineas": [
+    {
+     "texto": "¿Te llegó un SMS de que tu paquete no se pudo entregar?",
+     "voz": "¿Te llegó un mensaje de que tu paquete no se pudo entregar?"
+    },
+    {
+     "texto": "No lo abras."
+    }
+   ]
+  },
+  {
+   "tipo": "chat",
+   "modo": "peligro",
+   "remitente": "Paquetería",
+   "detalle": "SMS · número desconocido",
+   "mensajes": [
+    {
+     "texto": "Su paquete está *retenido* por dirección incompleta.",
+     "alerta": "Remitente raro"
+    },
+    {
+     "texto": "Pague $1.99 de reenvío aquí: [entrega-pkt.info/pago]",
+     "alerta": "Enlace raro"
+    },
+    {
+     "texto": "Si no paga en *12 h*, se devolverá.",
+     "alerta": "Prisa"
+    }
+   ],
+   "lineas": [
+    {
+     "texto": "Así se ven: dicen que tu paquete está retenido."
+    },
+    {
+     "texto": "Te piden pagar un costo mínimo en un enlace raro."
+    },
+    {
+     "texto": "Y te meten prisa."
+    }
+   ]
+  },
+  {
+   "tipo": "tarjeta",
+   "modo": "peligro",
+   "texto": "Ese pago de *1 dólar*…",
+   "etiqueta": "ROBADA",
+   "sub": "…es para robar tu tarjeta *completa*.",
+   "lineas": [
+    {
+     "texto": "Ese pago mínimo no es el objetivo."
+    },
+    {
+     "texto": "Quieren los datos de tu tarjeta completa."
+    }
+   ]
+  },
+  {
+   "tipo": "titular",
+   "modo": "peligro",
+   "icono": "alerta",
+   "texto": "Su pico: de *Black Friday* a *Cyber Monday*",
+   "sub": "justo cuando sí esperas paquetes",
+   "tam": 88,
+   "lineas": [
+    {
+     "texto": "Y estos mensajes llegan a su pico entre Black Friday y Cyber Monday.",
+     "voz": "Y estos mensajes llegan a su pico entre el blac fraidei y el sáiber mandei."
+    },
+    {
+     "texto": "Justo cuando sí esperas paquetes."
+    }
+   ]
+  },
+  {
+   "tipo": "checklist",
+   "modo": "calma",
+   "insignia": "Qué hacer",
+   "texto": "Qué *hacer*",
+   "pasos": [
+    {
+     "t": "No toques el enlace",
+     "d": "ni respondas el mensaje"
+    },
+    {
+     "t": "Rastrea en la app oficial",
+     "d": "con tu número de pedido"
+    },
+    {
+     "t": "Reporta y borra",
+     "d": "y bloquea el número"
+    }
+   ],
+   "lineas": [
+    {
+     "texto": "Uno: no toques el enlace."
+    },
+    {
+     "texto": "Dos: rastrea tu pedido en la app oficial.",
+     "voz": "Dos: rastrea tu pedido en la ap oficial."
+    },
+    {
+     "texto": "Tres: reporta, borra y bloquea."
+    }
+   ]
+  },
+  {
+   "tipo": "cta",
+   "modo": "calma",
+   "insignia": "Qué hacer",
+   "texto": "*Guárdalo* y compártelo",
+   "sub": "con quien está esperando un paquete",
+   "lineas": [
+    {
+     "texto": "Guárdalo y compártelo con quien está esperando un paquete."
+    }
+   ]
+  }
+ ]
+}

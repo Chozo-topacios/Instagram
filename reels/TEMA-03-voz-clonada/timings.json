@@ -1,0 +1,65 @@
+{
+ "duration": 36.249,
+ "lines": [
+  {
+   "scene": 0,
+   "text": "Si tu mamá te llama llorando pidiendo dinero…",
+   "start": 0.25,
+   "end": 2.665
+  },
+  {
+   "scene": 0,
+   "text": "…puede no ser tu mamá.",
+   "start": 2.785,
+   "end": 4.143
+  },
+  {
+   "scene": 1,
+   "text": "Con IA bastan unos 3 segundos de tu voz, sacados de un video en redes, para clonarla.",
+   "start": 4.493,
+   "end": 9.857
+  },
+  {
+   "scene": 2,
+   "text": "Te pide dinero urgente.",
+   "start": 10.207,
+   "end": 11.6
+  },
+  {
+   "scene": 2,
+   "text": "Te pide que no le cuentes a nadie.",
+   "start": 11.72,
+   "end": 13.636
+  },
+  {
+   "scene": 2,
+   "text": "Y que lo mandes a una cuenta nueva.",
+   "start": 13.756,
+   "end": 15.753
+  },
+  {
+   "scene": 3,
+   "text": "En EE. UU. acusan a 3 hombres de un fraude de más de 129 millones de dólares imitando voces.",
+   "start": 16.103,
+   "end": 22.616
+  },
+  {
+   "scene": 4,
+   "text": "La solución: acuerden una palabra clave en familia.",
+   "start": 22.966,
+   "end": 26.646
+  },
+  {
+   "scene": 4,
+   "text": "Y si dudas, cuelga y llama tú al número de siempre.",
+   "start": 26.766,
+   "end": 30.017
+  },
+  {
+   "scene": 5,
+   "text": "Mándale este video a tu familia y elijan su palabra clave hoy.",
+   "start": 30.367,
+   "end": 34.849
+  }
+ ]
+}
