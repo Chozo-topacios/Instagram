@@ -1,0 +1,148 @@
+{
+ "id": "TEMA-01",
+ "titulo": "Ataque Optimizely: 178 sitios infectados",
+ "formato": "alerta",
+ "tema": "noche",
+ "subtitulos": "caja",
+ "transicion": "fade",
+ "insignia": "Alerta de ciberseguridad",
+ "fecha": "NOV 2026",
+ "velocidad": 0.86,
+ "escenas": [
+  {
+   "tipo": "titular",
+   "modo": "peligro",
+   "icono": "telefono",
+   "texto": "¿Entraste a *CNN*, *IKEA* o *Zoom* esta semana?",
+   "sub": "Revisa tu iPhone. *Ya.*",
+   "tam": 92,
+   "lineas": [
+    {
+     "texto": "¿Entraste a CNN, IKEA o Zoom esta semana?",
+     "voz": "¿Entraste a ce ene ene, ikéa, o sum, esta semana?"
+    },
+    {
+     "texto": "Revisa tu iPhone. Ya.",
+     "voz": "Revisa tu aifon. Ya."
+    }
+   ]
+  },
+  {
+   "tipo": "contador",
+   "modo": "peligro",
+   "texto": "Hackearon *una sola herramienta*…",
+   "valor": 178,
+   "etiqueta": "sitios web infectados",
+   "puntos": true,
+   "icono": "bomba",
+   "lineas": [
+    {
+     "texto": "Hackers infectaron una herramienta que usan 178 sitios web gigantes.",
+     "voz": "Unos hackers infectaron una herramienta que usan ciento setenta y ocho sitios web gigantes."
+    }
+   ]
+  },
+  {
+   "tipo": "tarjeta",
+   "modo": "peligro",
+   "texto": "Si pagaste ahí, el código podía…",
+   "sub": "…y desviar tus pagos en *cripto*.",
+   "lineas": [
+    {
+     "texto": "Si pagaste ahí, podían robar tu tarjeta…",
+     "voz": "Si pagaste ahí, podían robar tu tarjeta,"
+    },
+    {
+     "texto": "…y desviar tus pagos en cripto.",
+     "voz": "y desviar tus pagos en cripto."
+    }
+   ]
+  },
+  {
+   "tipo": "telefono",
+   "modo": "peligro",
+   "texto": "iPhones con *iOS viejo*",
+   "pantalla": "iOS 17.2",
+   "insignia": "0",
+   "insignia_sub": "CLICS",
+   "lineas": [
+    {
+     "texto": "En iPhones con iOS viejo, intentaban hackearlo…",
+     "voz": "Y en aifons con versiones viejas, intentaban hackearlo,"
+    },
+    {
+     "texto": "…sin que tocaras nada.",
+     "voz": "sin que tocaras nada."
+    }
+   ]
+  },
+  {
+   "tipo": "agente",
+   "modo": "calma",
+   "insignia": "Calma, hay solución",
+   "expresion": "calma",
+   "expresion2": "guino",
+   "texto": "*0* iPhones infectados confirmados",
+   "sub": "Si actualizaste, estás protegido.",
+   "lineas": [
+    {
+     "texto": "No hay iPhones confirmados como infectados.",
+     "voz": "Tranquilo: no hay aifons confirmados como infectados."
+    },
+    {
+     "texto": "Si actualizaste, estás protegido."
+    }
+   ]
+  },
+  {
+   "tipo": "checklist",
+   "modo": "calma",
+   "insignia": "Cómo protegerte",
+   "texto": "Haz esto *hoy*",
+   "pasos": [
+    {
+     "t": "Actualiza tu iPhone",
+     "d": "iOS 18.7.3+ o iOS 26.3+"
+    },
+    {
+     "t": "Revisa los movimientos de tu tarjeta",
+     "d": "¿Compraste en esos sitios el 16 de nov?"
+    },
+    {
+     "t": "Activa alertas en tu banco",
+     "d": "Cada cobro te llega al instante"
+    }
+   ],
+   "lineas": [
+    {
+     "texto": "1. Actualiza tu iPhone.",
+     "voz": "Uno: actualiza tu aifon."
+    },
+    {
+     "texto": "2. Revisa los movimientos de tu tarjeta.",
+     "voz": "Dos: revisa los movimientos de tu tarjeta."
+    },
+    {
+     "texto": "3. Activa alertas en tu banco.",
+     "voz": "Tres: activa alertas en tu banco."
+    }
+   ]
+  },
+  {
+   "tipo": "cta",
+   "modo": "calma",
+   "insignia": "Cómo protegerte",
+   "agente": "guino",
+   "texto": "*Guárdalo* y compártelo",
+   "sub": "con quien nunca actualiza su teléfono",
+   "lineas": [
+    {
+     "texto": "Guarda este video y compártelo con quien nunca actualiza su teléfono.",
+     "voz": "Guarda este video, y compártelo con quien nunca actualiza su teléfono."
+    }
+   ]
+  }
+ ],
+ "handle": "@brechainvisible",
+ "marca": "@brechainvisible"
+}

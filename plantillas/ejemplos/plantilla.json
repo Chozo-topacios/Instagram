@@ -6,7 +6,7 @@
  "subtitulos": "caja",
  "transicion": "fade",
  "insignia": "Alerta de ciberseguridad",
- "handle": "Brecha Invisible · ciberseguridad sin rollos",
+ "handle": "@brechainvisible",
  "fecha": "MES AAAA",
  "velocidad": 0.86,
  "escenas": [
@@ -119,5 +119,5 @@
    "agente": "guino"
   }
  ],
- "marca": "Brecha Invisible"
+ "marca": "@brechainvisible"
 }

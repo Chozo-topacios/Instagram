@@ -1,5 +1,5 @@
 {
- "handle": "Brecha Invisible · ciberseguridad sin rollos",
+ "handle": "@brechainvisible",
  "fecha": "NOV 2026",
  "velocidad": 0.86,
  "id": "TEMA-03",
@@ -86,11 +86,8 @@
    ]
   },
   {
-   "tipo": "escudo",
+   "tipo": "agente",
    "modo": "calma",
-   "insignia": "Cómo protegerte",
-   "texto": "Creen una *palabra clave* familiar",
-   "sub": "y si dudas: cuelga y llama tú",
    "lineas": [
     {
      "texto": "La solución: acuerden una palabra clave en familia."
@@ -98,7 +95,12 @@
     {
      "texto": "Y si dudas, cuelga y llama tú al número de siempre."
     }
-   ]
+   ],
+   "insignia": "Cómo protegerte",
+   "expresion": "lupa",
+   "expresion2": "calma",
+   "texto": "Creen una *palabra clave* familiar",
+   "sub": "y si dudas: cuelga y llama tú al número de siempre"
   },
   {
    "tipo": "cta",
@@ -118,5 +120,5 @@
    "agente": "guino"
   }
  ],
- "marca": "Brecha Invisible"
+ "marca": "@brechainvisible"
 }

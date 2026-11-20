@@ -1,5 +1,5 @@
 {
- "handle": "Brecha Invisible · ciberseguridad sin rollos",
+ "handle": "@brechainvisible",
  "fecha": "NOV 2026",
  "velocidad": 0.86,
  "id": "TEMA-05",
@@ -28,21 +28,17 @@
    ]
   },
   {
-   "tipo": "titular",
+   "tipo": "agente",
    "modo": "peligro",
-   "icono": "alerta",
-   "texto": "Alerta por el *lanzamiento*",
-   "pills": [
-    "Promos falsas",
-    "Acceso anticipado",
-    "Descargas"
-   ],
    "lineas": [
     {
      "texto": "Expertos en Reino Unido ya alertan de estafas con el lanzamiento de GTA 6.",
      "voz": "Expertos en el Reino Unido ya alertan de estafas con el lanzamiento de ge te a seis."
     }
-   ]
+   ],
+   "expresion": "alerta",
+   "texto": "Alerta por el *lanzamiento*",
+   "sub": "promos falsas, “acceso anticipado” y descargas"
   },
   {
    "tipo": "mito",
@@ -125,5 +121,5 @@
    "agente": "guino"
   }
  ],
- "marca": "Brecha Invisible"
+ "marca": "@brechainvisible"
 }

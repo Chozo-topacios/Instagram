@@ -1,6 +1,6 @@
 # TEMA-03 · Si tu mamá te llama llorando… puede no ser tu mamá
 
-**Duración:** 36.2 s · **Formato:** `simulacion` · **Tema visual:** `papel` · **Subtítulos:** `barra` · **Transición:** `slide`
+**Duración:** 36.2 s · **Formato:** `simulacion` · **Tema visual:** `papel` · **Subtítulos:** `barra` · **Transición:** `slide` · **Marca:** `@brechainvisible` + Agente Sombra
 
 Archivos: `reel.mp4` (listo para subir) · `voz.mp3` · `subtitulos.srt` · `reel.html` (vista con ▶) · `reel.json` (fuente editable)
 
@@ -11,8 +11,8 @@ Archivos: `reel.mp4` (listo para subir) · `voz.mp3` · `subtitulos.srt` · `ree
 | 0:04–0:09 | `contador` (peligro) | Con IA bastan unos 3 segundos de tu voz, sacados de un video en redes, para clonarla. |
 | 0:10–0:15 | `chat` (peligro) | Te pide dinero urgente. Te pide que no le cuentes a nadie. Y que lo mandes a una cuenta nueva. |
 | 0:16–0:22 | `titular` (peligro) | En EE. UU. acusan a 3 hombres de un fraude de más de 129 millones de dólares imitando voces. |
-| 0:22–0:30 | `escudo` (calma) | La solución: acuerden una palabra clave en familia. Y si dudas, cuelga y llama tú al número de siempre. |
-| 0:30–0:34 | `cta` (calma) | Mándale este video a tu familia y elijan su palabra clave hoy. |
+| 0:22–0:30 | `agente` · lupa (calma) | La solución: acuerden una palabra clave en familia. Y si dudas, cuelga y llama tú al número de siempre. |
+| 0:30–0:34 | `cta` · agente guino (calma) | Mándale este video a tu familia y elijan su palabra clave hoy. |
 
 ## Texto de la publicación (copiar y pegar)
 ```

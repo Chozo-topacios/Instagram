@@ -1,0 +1,83 @@
+{
+ "duration": 40.577,
+ "lines": [
+  {
+   "scene": 0,
+   "text": "¿Entraste a CNN, IKEA o Zoom esta semana?",
+   "start": 0.25,
+   "end": 3.872
+  },
+  {
+   "scene": 0,
+   "text": "Revisa tu iPhone. Ya.",
+   "start": 3.992,
+   "end": 5.699
+  },
+  {
+   "scene": 1,
+   "text": "Hackers infectaron una herramienta que usan 178 sitios web gigantes.",
+   "start": 6.049,
+   "end": 11.064
+  },
+  {
+   "scene": 2,
+   "text": "Si pagaste ahí, podían robar tu tarjeta…",
+   "start": 11.414,
+   "end": 13.945
+  },
+  {
+   "scene": 2,
+   "text": "…y desviar tus pagos en cripto.",
+   "start": 14.065,
+   "end": 15.911
+  },
+  {
+   "scene": 3,
+   "text": "En iPhones con iOS viejo, intentaban hackearlo…",
+   "start": 16.261,
+   "end": 19.837
+  },
+  {
+   "scene": 3,
+   "text": "…sin que tocaras nada.",
+   "start": 19.957,
+   "end": 21.351
+  },
+  {
+   "scene": 4,
+   "text": "No hay iPhones confirmados como infectados.",
+   "start": 21.701,
+   "end": 24.951
+  },
+  {
+   "scene": 4,
+   "text": "Si actualizaste, estás protegido.",
+   "start": 25.071,
+   "end": 27.219
+  },
+  {
+   "scene": 5,
+   "text": "1. Actualiza tu iPhone.",
+   "start": 27.569,
+   "end": 29.438
+  },
+  {
+   "scene": 5,
+   "text": "2. Revisa los movimientos de tu tarjeta.",
+   "start": 29.558,
+   "end": 32.182
+  },
+  {
+   "scene": 5,
+   "text": "3. Activa alertas en tu banco.",
+   "start": 32.302,
+   "end": 34.694
+  },
+  {
+   "scene": 6,
+   "text": "Guarda este video y compártelo con quien nunca actualiza su teléfono.",
+   "start": 35.044,
+   "end": 39.177
+  }
+ ]
+}

@@ -31,7 +31,7 @@
   #top{position:absolute;top:110px;left:70px;right:70px;display:flex;align-items:center;gap:22px}
   .badge{display:flex;align-items:center;gap:16px;padding:16px 28px;border-radius:999px;font-weight:800;font-size:32px;letter-spacing:3px;text-transform:uppercase}
   .badge .dot{width:22px;height:22px;border-radius:50%}
-  #date{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:28px;font-weight:900;color:var(--ink);letter-spacing:3px;text-transform:uppercase}
+  #date{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:32px;font-weight:900;color:var(--ink);letter-spacing:.5px}
   #date .mk{width:74px;height:74px;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 40%,#ff2e8899,#3a1460 55%,#07030f);border:3px solid var(--line)}
   #date .mk svg{width:100%;height:100%}
   /* escenas */
@@ -110,7 +110,7 @@ $("bg").className="bg bg-"+TH.fondo;
 if(TH.fondo==="blobs") $("bg").innerHTML=`<i style="background:${TH.peligro};left:-300px;top:100px"></i><i style="background:${TH.neutral};right:-300px;top:700px"></i><i style="background:${TH.acento};left:100px;top:1300px;opacity:.25"></i>`;
 if(!TH.scan) $("scanfx").style.display="none";
 $("cap").className=""; document.body.classList.add("cap-"+(SPEC.subtitulos||"caja"));
-const MARCA=SPEC.marca===undefined?"Brecha Invisible":SPEC.marca;
+const MARCA=SPEC.marca===undefined?"@brechainvisible":SPEC.marca;
 $("date").innerHTML=MARCA?`<span>${esc(MARCA)}</span><span class="mk">${agenteSVG("neutral",{id:"mk"})}</span>`:esc(SPEC.fecha||"");
 $("handle").textContent=SPEC.handle||"";
 const MODE=m=>TH[m]||TH.neutral;

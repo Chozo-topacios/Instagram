@@ -1,6 +1,6 @@
 # TEMA-04 · ¿Te llegó un SMS de que tu paquete no se pudo entregar? No lo abras
 
-**Duración:** 37.1 s · **Formato:** `es-estafa` · **Tema visual:** `terminal` · **Subtítulos:** `caja` · **Transición:** `glitch`
+**Duración:** 37.1 s · **Formato:** `es-estafa` · **Tema visual:** `terminal` · **Subtítulos:** `caja` · **Transición:** `glitch` · **Marca:** `@brechainvisible` + Agente Sombra
 
 Archivos: `reel.mp4` (listo para subir) · `voz.mp3` · `subtitulos.srt` · `reel.html` (vista con ▶) · `reel.json` (fuente editable)
 
@@ -10,9 +10,9 @@ Archivos: `reel.mp4` (listo para subir) · `voz.mp3` · `subtitulos.srt` · `ree
 | 0:00–0:04 | `titular` (peligro) | ¿Te llegó un SMS de que tu paquete no se pudo entregar? No lo abras. |
 | 0:04–0:11 | `chat` (peligro) | Así se ven: dicen que tu paquete está retenido. Te piden pagar un costo mínimo en un enlace raro. Y te meten prisa. |
 | 0:12–0:16 | `tarjeta` (peligro) | Ese pago mínimo no es el objetivo. Quieren los datos de tu tarjeta completa. |
-| 0:17–0:23 | `titular` (peligro) | Y estos mensajes llegan a su pico entre Black Friday y Cyber Monday. Justo cuando sí esperas paquetes. |
+| 0:17–0:23 | `agente` · alerta (peligro) | Y estos mensajes llegan a su pico entre Black Friday y Cyber Monday. Justo cuando sí esperas paquetes. |
 | 0:23–0:31 | `checklist` (calma) | Uno: no toques el enlace. Dos: rastrea tu pedido en la app oficial. Tres: reporta, borra y bloquea. |
-| 0:32–0:35 | `cta` (calma) | Guárdalo y compártelo con quien está esperando un paquete. |
+| 0:32–0:35 | `cta` · agente guino (calma) | Guárdalo y compártelo con quien está esperando un paquete. |
 
 ## Texto de la publicación (copiar y pegar)
 ```

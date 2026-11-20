@@ -1,6 +1,6 @@
 # TEMA-02 · Esa oferta de Black Friday al 80 %… puede ser una tienda que no existe
 
-**Duración:** 42.7 s · **Formato:** `top3` · **Tema visual:** `neon` · **Subtítulos:** `karaoke` · **Transición:** `zoom`
+**Duración:** 42.7 s · **Formato:** `top3` · **Tema visual:** `neon` · **Subtítulos:** `karaoke` · **Transición:** `zoom` · **Marca:** `@brechainvisible` + Agente Sombra
 
 Archivos: `reel.mp4` (listo para subir) · `voz.mp3` · `subtitulos.srt` · `reel.html` (vista con ▶) · `reel.json` (fuente editable)
 
@@ -11,8 +11,8 @@ Archivos: `reel.mp4` (listo para subir) · `voz.mp3` · `subtitulos.srt` · `ree
 | 0:05–0:12 | `contador` (peligro) | Ya hay más de 4.000 páginas nuevas con nombres de Black Friday. Y casi 1 de cada 5 es riesgosa. |
 | 0:12–0:17 | `titular` (peligro) | Los correos falsos de ofertas subieron un 82%… …en solo una semana. |
 | 0:18–0:29 | `top` (peligro) | Tres: precios demasiado buenos para ser reales. Dos: una dirección web rara, con letras cambiadas. Uno: no tiene teléfono, ni dirección, ni política de devoluciones. |
-| 0:29–0:36 | `escudo` (calma) | Mejor: entra desde la app oficial, o escribiendo tú la dirección. Nunca desde un anuncio o un enlace. |
-| 0:36–0:41 | `cta` (calma) | Guarda este video antes del Black Friday y mándaselo a quien compra todo en oferta. |
+| 0:29–0:36 | `agente` · calma (calma) | Mejor: entra desde la app oficial, o escribiendo tú la dirección. Nunca desde un anuncio o un enlace. |
+| 0:36–0:41 | `cta` · agente guino (calma) | Guarda este video antes del Black Friday y mándaselo a quien compra todo en oferta. |
 
 ## Texto de la publicación (copiar y pegar)
 ```

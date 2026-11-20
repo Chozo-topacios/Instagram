@@ -1,5 +1,5 @@
 {
- "handle": "Brecha Invisible · ciberseguridad sin rollos",
+ "handle": "@brechainvisible",
  "fecha": "NOV 2026",
  "velocidad": 0.86,
  "id": "TEMA-02",
@@ -97,11 +97,8 @@
    ]
   },
   {
-   "tipo": "escudo",
+   "tipo": "agente",
    "modo": "calma",
-   "insignia": "Cómo protegerte",
-   "texto": "Entra desde la *app oficial*",
-   "sub": "o escribiendo tú la dirección",
    "lineas": [
     {
      "texto": "Mejor: entra desde la app oficial, o escribiendo tú la dirección.",
@@ -110,7 +107,13 @@
     {
      "texto": "Nunca desde un anuncio o un enlace."
     }
-   ]
+   ],
+   "insignia": "Cómo protegerte",
+   "expresion": "calma",
+   "expresion2": "guino",
+   "texto": "Entra desde la *app oficial*",
+   "sub": "o escribiendo tú la dirección. Nunca desde un anuncio.",
+   "tam": 62
   },
   {
    "tipo": "cta",
@@ -128,5 +131,5 @@
    "agente": "guino"
   }
  ],
- "marca": "Brecha Invisible"
+ "marca": "@brechainvisible"
 }

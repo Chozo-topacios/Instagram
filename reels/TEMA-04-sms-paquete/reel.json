@@ -1,5 +1,5 @@
 {
- "handle": "Brecha Invisible · ciberseguridad sin rollos",
+ "handle": "@brechainvisible",
  "fecha": "NOV 2026",
  "velocidad": 0.86,
  "id": "TEMA-04",
@@ -74,12 +74,8 @@
    ]
   },
   {
-   "tipo": "titular",
+   "tipo": "agente",
    "modo": "peligro",
-   "icono": "alerta",
-   "texto": "Su pico: de *Black Friday* a *Cyber Monday*",
-   "sub": "justo cuando sí esperas paquetes",
-   "tam": 88,
    "lineas": [
     {
      "texto": "Y estos mensajes llegan a su pico entre Black Friday y Cyber Monday.",
@@ -88,7 +84,12 @@
     {
      "texto": "Justo cuando sí esperas paquetes."
     }
-   ]
+   ],
+   "expresion": "alerta",
+   "expresion2": "lupa",
+   "texto": "Su pico: de *Black Friday* a *Cyber Monday*",
+   "sub": "justo cuando sí esperas paquetes",
+   "tam": 60
   },
   {
    "tipo": "checklist",
@@ -136,5 +137,5 @@
    "agente": "guino"
   }
  ],
- "marca": "Brecha Invisible"
+ "marca": "@brechainvisible"
 }

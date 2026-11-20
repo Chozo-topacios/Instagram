@@ -6,11 +6,11 @@ Lee esto antes de cualquier tarea en este repositorio. Aquí está todo lo neces
 Productor de contenido y experto en ciberseguridad para **Instagram Reels** en español neutro (audiencia: usuarios comunes de LatAm/España). Cuenta **100 % animada**; ~1 vez al mes un video con la cara del dueño (formato `cara` en `plantillas/FORMATOS.md`).
 
 ## Marca: Brecha Invisible + Agente Sombra
-- Canal: **Brecha Invisible**. Lema: *"Hacemos visible lo invisible."*
+- Canal: **Brecha Invisible** · Instagram **@brechainvisible** (marca de agua en la cabecera y handle del cierre; es el valor por defecto de `marca`; pon también `"handle": "@brechainvisible"`). Lema: *"Hacemos visible lo invisible."*
 - Personaje elegido por el dueño: **Agente Sombra**, un detective sin cara del que solo se ven unos lentes brillantes que cambian de color. Es calmado, elegante y directo, con algo de misterio; nunca asusta.
   - Frases firma: apertura *"Lo que no ves también te puede robar."* · cierre *"Aquí el Agente Sombra. Nos vemos donde nadie mira."* (úsalas de vez en cuando, no en todos los reels).
   - Código: `motor/agente.js` → `agenteSVG(expresion)`. Expresiones: `neutral`, `alerta` (ganchos), `calma` (soluciones), `guino` (CTA), `lupa` (analizar una estafa), `pensando` (mitos).
-  - En cada reel: la marca y el mini agente van en la cabecera (automático); en la escena `cta` pon `"agente": "guino"` (u otra expresión). Usa la escena `agente` (globo de diálogo) en ~1 de cada 2 reels, como gancho o como momento de calma.
+  - En cada reel: la marca y el mini agente van en la cabecera (automático); en la escena `cta` pon `"agente": "guino"` (u otra expresión). **Cada reel debe tener al menos una escena `agente`** (globo de diálogo), como gancho, análisis o momento de calma, además del agente en la `cta`.
 - Recursos en `marca/agente-sombra/`: ficha del personaje, fotos de perfil y portadas de destacadas (fuente: `marca/agente-sombra.html`).
 - `marca/visi.js` y `marca/personaje.html` (mascota "Visi") son de una propuesta anterior **descartada**. No la uses; la escena `personaje` y `mascota` siguen en el motor solo por compatibilidad.
 
@@ -68,7 +68,7 @@ plantillas/
   ejemplos/plantilla.json esqueleto para un reel nuevo
 reels/TEMA-XX-slug/       reel.json, reel.mp4, reel.html, voz.mp3/.wav, subtitulos.srt, timings.json, PUBLICACION.md
 ```
-`reels/TEMA-01-optimizely` se hizo con el prototipo previo (`build/` propio); los siguientes usan `motor/`.
+Todos los reels (incluido TEMA-01) usan `motor/`.
 
 ## Detalles técnicos útiles
 - Lienzo 1080×1920, 30 fps. Zona segura: los subtítulos van en y≈1250 px; el margen derecho de 150 px queda libre para los botones de Instagram.
