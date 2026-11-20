@@ -25,6 +25,7 @@ Productor de contenido y experto en ciberseguridad para **Instagram Reels** en e
 8. Escribe `reels/TEMA-XX-slug/PUBLICACION.md` (guion, texto de la publicación, hashtags, portada, fuentes). Copia el estilo de los existentes.
 9. Añade una fila a `plantillas/REGISTRO.md`.
 10. Commit y push.
+11. Entrega al usuario un `.zip` con la carpeta `Instagram-Reels/AAAA-MM-DD_TEMA-XX_tema-corto/` (el `.mp4` y el `_texto-publicacion.txt` con ese mismo nombre). La fecha es la **fecha sugerida de publicación**, no la de producción, y el tema corto va en minúsculas con guiones. Si hay una carpeta de su PC conectada (`list_computer_folders`), cópialo ahí directamente.
 
 Atajo para los pasos 4, 5 y 7: `bash motor/producir.sh reels/TEMA-XX-slug`.
 
