@@ -1,88 +1,117 @@
 <!doctype html><html><head><meta charset="utf-8"><title>Personajes Brecha Invisible</title>
-<style>*{margin:0;box-sizing:border-box}body{background:#0a0b14;font-family:Inter,system-ui,sans-serif;color:#fff}
-#sheet{width:2040px;padding:50px 40px 60px;display:grid;grid-template-columns:repeat(5,1fr);gap:28px}
-h1{grid-column:1/-1;font-size:56px;font-weight:900;letter-spacing:-1px;margin-bottom:10px}h1 span{color:#00e5ff}
-.c{background:#131528;border:2px solid #23264a;border-radius:28px;padding:22px;text-align:center}
-.c svg{width:300px;height:300px;border-radius:50%;display:block;margin:0 auto 18px}
-.n{font-size:40px;font-weight:900}.t{font-size:22px;color:#00e5ff;font-weight:700;margin:4px 0 10px;text-transform:uppercase;letter-spacing:2px}
-.d{font-size:21px;line-height:1.35;color:#c4c8e8;text-align:left}.d b{color:#fff}
-.v{width:1080px;height:1080px}</style></head><body>
-<div id="sheet"><h1>Brecha <span>Invisible</span> · 5 opciones de personaje</h1></div>
-<div id="solo"></div>
-<script>
-const frame=(id,c1,c2,inner,bg1,bg2)=>`<svg viewBox="0 0 1080 1080" id="${id}"><defs>
-<radialGradient id="${id}bg" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="${bg1}"/><stop offset="1" stop-color="${bg2}"/></radialGradient>
-<linearGradient id="${id}ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient>
-<filter id="${id}g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<filter id="${id}sh"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".5"/></filter>
-<pattern id="${id}p" width="120" height="120" patternUnits="userSpaceOnUse"><path d="M0 60 H40 L60 40 H120 M60 120 V80 L80 60" fill="none" stroke="${c1}" stroke-opacity=".14" stroke-width="3"/></pattern></defs>
-<rect width="1080" height="1080" fill="url(#${id}bg)"/><rect width="1080" height="1080" fill="url(#${id}p)"/>
-<circle cx="540" cy="540" r="470" fill="none" stroke="url(#${id}ring)" stroke-width="16" filter="url(#${id}g)"/>
-<g filter="url(#${id}sh)">${inner}</g>
-<g fill="#fff"><path d="M200 330 l8 22 22 8 -22 8 -8 22 -8 -22 -22 -8 22 -8z" opacity=".8"/><path d="M870 780 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6z" opacity=".7"/></g></svg>`;
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{background:#05070f;font-family:Inter,"Inter Display",system-ui,sans-serif;color:#f4f7ff;width:2000px;padding:60px}
+h1{font-size:64px;font-weight:900;letter-spacing:2px;text-align:center}
+h1 span{background:linear-gradient(90deg,#00e5ff,#8b6bff,#ff2e88);-webkit-background-clip:text;color:transparent}
+.sub{text-align:center;color:#8d9bc0;font-size:28px;margin:12px 0 50px}
+.row{display:flex;gap:28px;justify-content:center}
+.c{width:360px;background:#0c1124;border:2px solid #1d2647;border-radius:30px;padding:24px;text-align:center}
+.av{width:312px;height:312px;border-radius:50%;overflow:hidden;margin:0 auto 20px}
+.av svg{width:100%;height:100%;display:block}
+.n{font-size:30px;font-weight:900;color:#8d9bc0;letter-spacing:3px}
+.nm{font-size:46px;font-weight:900;margin:2px 0 10px}
+.t{font-size:22px;color:#c6cfe8;line-height:1.35;min-height:118px}
+.tag{display:inline-block;margin-top:14px;padding:8px 16px;border-radius:999px;font-size:19px;font-weight:700}
+</style></head><body>
+<h1>BRECHA <span>INVISIBLE</span></h1>
+<div class="sub">5 opciones de personaje · cercano + profesional</div>
+<div class="row">
 
-const P=[
-{id:"vigia",n:"Vigía",t:"Búho guardián",c1:"#00e5ff",c2:"#ff2e88",bg1:"#2a1f6b",bg2:"#05030f",
- d:"<b>Ve en la oscuridad</b> lo que otros no ven: las brechas invisibles. Sabio, tranquilo, explica con calma. <b>Tono:</b> mentor confiable.",
- svg:`<path d="M330 300 L300 150 L440 255 Z" fill="#2c2f78"/><path d="M750 300 L780 150 L640 255 Z" fill="#2c2f78"/>
- <path d="M335 290 L318 185 L410 255 Z" fill="#ff2e88"/><path d="M745 290 L762 185 L670 255 Z" fill="#ff2e88"/>
- <path d="M300 480 C210 560 220 760 330 860 C350 760 360 620 360 520 Z" fill="#23266a"/><path d="M780 480 C870 560 860 760 750 860 C730 760 720 620 720 520 Z" fill="#23266a"/>
- <path d="M540 230 C760 230 820 400 810 560 C800 760 690 900 540 900 C390 900 280 760 270 560 C260 400 320 230 540 230 Z" fill="#33378a" stroke="#8b6bff" stroke-width="8"/>
- <path d="M300 430 C330 330 470 320 540 400 C610 320 750 330 780 430 C780 540 640 560 540 480 C440 560 300 540 300 430 Z" fill="#0d0e2e"/>
- <circle cx="420" cy="440" r="92" fill="#00c8f0"/><circle cx="660" cy="440" r="92" fill="#00c8f0"/><circle cx="420" cy="440" r="64" fill="none" stroke="#03204a" stroke-width="6"/><circle cx="660" cy="440" r="64" fill="none" stroke="#03204a" stroke-width="6"/>
- <circle cx="420" cy="440" r="34" fill="#020b1f"/><circle cx="660" cy="440" r="34" fill="#020b1f"/><circle cx="404" cy="422" r="13" fill="#fff"/><circle cx="644" cy="422" r="13" fill="#fff"/>
- <path d="M540 490 L568 525 L540 570 L512 525 Z" fill="#ffb627"/>
- <g transform="translate(540 715) scale(1.1)"><path d="M0 -70 L72 -45 V10 C72 55 40 85 0 100 C-40 85 -72 55 -72 10 V-45 Z" fill="#ffc83d" stroke="#fff3c4" stroke-width="6"/><path d="M-30 12 L-8 34 L34 -12" fill="none" stroke="#3b2a00" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></g>`},
-{id:"invi",n:"Invi",t:"Fantasma digital",c1:"#7df9ff",c2:"#b56bff",bg1:"#14305a",bg2:"#030812",
- d:"<b>Es literalmente invisible</b>: se cuela por las brechas para mostrarte cómo entran los atacantes. Curioso, travieso y simpático. <b>Tono:</b> cercano y divertido.",
- svg:`<defs><linearGradient id="gh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#bff6ff" stop-opacity=".95"/><stop offset="1" stop-color="#7df9ff" stop-opacity=".35"/></linearGradient></defs>
- <path d="M540 190 C740 190 800 350 800 520 V790 L745 750 L690 800 L635 750 L580 800 L525 750 L470 800 L415 750 L360 800 L305 750 L280 790 V520 C280 350 340 190 540 190 Z" fill="url(#gh)"/>
- <g fill="#7df9ff"><rect x="330" y="830" width="34" height="34" opacity=".6"/><rect x="450" y="850" width="26" height="26" opacity=".45"/><rect x="600" y="840" width="30" height="30" opacity=".55"/><rect x="720" y="860" width="22" height="22" opacity=".4"/><rect x="530" y="895" width="18" height="18" opacity=".3"/></g>
- <rect x="330" y="380" width="420" height="130" rx="65" fill="#0b1630"/><rect x="345" y="395" width="390" height="100" rx="50" fill="#00e5ff" opacity=".2"/>
- <ellipse cx="450" cy="445" rx="38" ry="44" fill="#7df9ff"/><ellipse cx="630" cy="445" rx="38" ry="44" fill="#7df9ff"/><circle cx="438" cy="430" r="12" fill="#fff"/><circle cx="618" cy="430" r="12" fill="#fff"/>
- <path d="M490 590 Q540 635 590 590" fill="none" stroke="#0b1630" stroke-width="16" stroke-linecap="round"/>
- <ellipse cx="390" cy="580" rx="34" ry="20" fill="#ff7ab8" opacity=".6"/><ellipse cx="690" cy="580" rx="34" ry="20" fill="#ff7ab8" opacity=".6"/>
- <path d="M540 380 V320" stroke="#b56bff" stroke-width="10"/><circle cx="540" cy="310" r="16" fill="#b56bff"/>`},
-{id:"kamo",n:"Kamo",t:"Camaleón detective",c1:"#2ee59d",c2:"#ffd23f",bg1:"#0f3b2e",bg2:"#020a07",
- d:"<b>Maestro del camuflaje</b>: conoce todos los disfraces de los estafadores, porque él también sabe esconderse. Sus ojos giran y lo vigilan todo. <b>Tono:</b> astuto e ingenioso.",
- svg:`<defs><linearGradient id="kb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3ff2a8"/><stop offset=".6" stop-color="#14a58a"/><stop offset="1" stop-color="#6b4bff"/></linearGradient></defs>
- <path d="M200 760 H880" stroke="#5a3d1e" stroke-width="34" stroke-linecap="round"/><path d="M700 760 l50 -60" stroke="#5a3d1e" stroke-width="20" stroke-linecap="round"/>
- <path d="M720 640 C860 640 880 480 780 470 C700 462 700 560 760 560 C800 560 800 510 775 510" fill="none" stroke="url(#kb)" stroke-width="56" stroke-linecap="round"/>
- <ellipse cx="560" cy="620" rx="210" ry="140" fill="url(#kb)"/>
- <path d="M420 700 V770 M520 735 V775 M640 735 V775 M720 690 V770" stroke="#0d6e5c" stroke-width="30" stroke-linecap="round"/>
- <path d="M240 540 C240 400 380 330 470 380 L540 460 C520 560 430 620 330 610 C270 600 240 580 240 540 Z" fill="url(#kb)"/>
- <path d="M300 360 L360 300 L420 350" fill="#3ff2a8"/>
- <circle cx="410" cy="470" r="86" fill="#14a58a" stroke="#3ff2a8" stroke-width="10"/><circle cx="410" cy="470" r="56" fill="#ffd23f"/>
- <circle cx="425" cy="470" r="26" fill="#111"/><path d="M410 400 V425 M410 515 V540 M340 470 H365 M455 470 H480" stroke="#111" stroke-width="6"/><circle cx="415" cy="458" r="8" fill="#fff"/>
- <path d="M260 570 Q300 590 340 572" fill="none" stroke="#0d6e5c" stroke-width="10" stroke-linecap="round"/>
- <g fill="#ffd23f" opacity=".85"><circle cx="560" cy="560" r="16"/><circle cx="620" cy="600" r="12"/><circle cx="520" cy="640" r="10"/><circle cx="660" cy="550" r="10"/></g>`},
-{id:"bit",n:"Bit",t:"Robot-dron escáner",c1:"#3ad4ff",c2:"#ff3b5c",bg1:"#122a55",bg2:"#02050e",
- d:"<b>Un dron que patrulla internet</b> y escanea links, apps y mensajes. Su ojo cambia de color: verde = seguro, rojo = estafa. <b>Tono:</b> rápido, directo y preciso.",
- svg:`<defs><radialGradient id="bm" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#cfd8ea"/><stop offset="1" stop-color="#4a5a7c"/></radialGradient>
- <radialGradient id="be" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#eaffff"/><stop offset=".4" stop-color="#3ad4ff"/><stop offset="1" stop-color="#0a3a7a"/></radialGradient></defs>
- <ellipse cx="540" cy="880" rx="200" ry="34" fill="#3ad4ff" opacity=".35"/>
- <path d="M440 800 L400 880 M640 800 L680 880" stroke="#3ad4ff" stroke-width="8" opacity=".5"/>
- <path d="M300 520 H200 M780 520 H880" stroke="#8a97b8" stroke-width="22" stroke-linecap="round"/><ellipse cx="180" cy="490" rx="80" ry="16" fill="#8a97b8"/><ellipse cx="900" cy="490" rx="80" ry="16" fill="#8a97b8"/>
- <circle cx="540" cy="540" r="270" fill="url(#bm)"/>
- <path d="M540 270 V200" stroke="#8a97b8" stroke-width="16"/><circle cx="540" cy="186" r="24" fill="#ff3b5c"/>
- <rect x="340" y="440" width="400" height="200" rx="100" fill="#0a1124"/>
- <circle cx="540" cy="540" r="78" fill="url(#be)"/><circle cx="540" cy="540" r="30" fill="#04122b"/><circle cx="522" cy="520" r="12" fill="#fff"/>
- <rect x="380" y="535" width="320" height="8" fill="#3ad4ff" opacity=".6"/>
- <path d="M470 700 Q540 730 610 700" fill="none" stroke="#4a5a7c" stroke-width="12" stroke-linecap="round"/>`},
-{id:"pixel",n:"Pixel",t:"Gato hacker ético",c1:"#ffd23f",c2:"#39ff88",bg1:"#1c2a1f",bg2:"#030604",
- d:"<b>Gato negro que ve en la oscuridad</b> y tiene 7 vidas digitales. Hacker <b>ético</b>: usa sus trucos para defenderte. Con audífonos y actitud. <b>Tono:</b> cool, juvenil, con humor.",
- svg:`<path d="M320 380 L300 170 L470 300 Z" fill="#15161c"/><path d="M760 380 L780 170 L610 300 Z" fill="#15161c"/>
- <path d="M330 350 L322 230 L430 305 Z" fill="#39ff88" opacity=".5"/><path d="M750 350 L758 230 L650 305 Z" fill="#39ff88" opacity=".5"/>
- <path d="M540 260 C780 260 840 420 830 560 C820 740 690 840 540 840 C390 840 260 740 250 560 C240 420 300 260 540 260 Z" fill="#1b1d25" stroke="#39ff88" stroke-width="6" stroke-opacity=".5"/>
- <path d="M250 520 C250 330 830 330 830 520" fill="none" stroke="#2b2e3a" stroke-width="34"/>
- <rect x="200" y="470" width="80" height="150" rx="36" fill="#ffd23f"/><rect x="800" y="470" width="80" height="150" rx="36" fill="#ffd23f"/>
- <path d="M240 610 Q260 730 400 740" fill="none" stroke="#2b2e3a" stroke-width="14"/><circle cx="410" cy="740" r="20" fill="#ffd23f"/>
- <ellipse cx="430" cy="500" rx="70" ry="80" fill="#39ff88"/><ellipse cx="650" cy="500" rx="70" ry="80" fill="#39ff88"/>
- <ellipse cx="430" cy="500" rx="16" ry="62" fill="#07130b"/><ellipse cx="650" cy="500" rx="16" ry="62" fill="#07130b"/><circle cx="410" cy="470" r="12" fill="#fff"/><circle cx="630" cy="470" r="12" fill="#fff"/>
- <path d="M520 610 L560 610 L540 635 Z" fill="#ff7ab8"/><path d="M540 635 Q510 670 485 650 M540 635 Q570 670 595 650" fill="none" stroke="#9aa0b5" stroke-width="7" stroke-linecap="round"/>
- <g stroke="#9aa0b5" stroke-width="5" opacity=".7"><path d="M470 625 L330 600 M470 645 L335 660 M610 625 L750 600 M610 645 L745 660"/></g>`}
-];
-const sheet=document.getElementById('sheet'),solo=document.getElementById('solo');
-P.forEach(p=>{sheet.insertAdjacentHTML('beforeend',`<div class="c">${frame(p.id,p.c1,p.c2,p.svg,p.bg1,p.bg2)}<div class="n">${p.n}</div><div class="t">${p.t}</div><div class="d">${p.d}</div></div>`);
- solo.insertAdjacentHTML('beforeend',`<div class="v" id="solo-${p.id}">${frame('s'+p.id,p.c1,p.c2,p.svg,p.bg1,p.bg2).replace('<svg ','<svg width="1080" height="1080" ')}</div>`);});
-</script></body></html>
+<!-- 1 VIGÍA búho -->
+<div class="c"><div class="av" id="p1"><svg viewBox="0 0 600 600">
+<defs><radialGradient id="b1" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#2a1f6b"/><stop offset="1" stop-color="#0a0620"/></radialGradient>
+<radialGradient id="e1" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#eaffff"/><stop offset=".4" stop-color="#00e5ff"/><stop offset="1" stop-color="#03306a"/></radialGradient>
+<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe066"/><stop offset="1" stop-color="#ff9f1c"/></linearGradient>
+<filter id="f1"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="600" height="600" fill="url(#b1)"/>
+<path d="M190 190 L170 95 L255 160Z M410 190 L430 95 L345 160Z" fill="#2c2f78"/><path d="M193 182 L183 120 L238 162Z M407 182 L417 120 L362 162Z" fill="#ff2e88"/>
+<path d="M300 140 C430 140 470 240 462 340 C455 460 390 560 300 560 C210 560 145 460 138 340 C130 240 170 140 300 140Z" fill="#33378a" stroke="#8b6bff" stroke-width="6"/>
+<path d="M165 265 C185 205 265 200 300 245 C335 200 415 205 435 265 C435 330 355 345 300 300 C245 345 165 330 165 265Z" fill="#0d0e2e"/>
+<g filter="url(#f1)"><circle cx="235" cy="268" r="52" fill="url(#e1)"/><circle cx="365" cy="268" r="52" fill="url(#e1)"/></g>
+<circle cx="235" cy="268" r="20" fill="#020b1f"/><circle cx="365" cy="268" r="20" fill="#020b1f"/><circle cx="226" cy="258" r="8" fill="#fff"/><circle cx="356" cy="258" r="8" fill="#fff"/>
+<path d="M300 300 L318 322 L300 350 L282 322Z" fill="url(#g1)"/>
+<g transform="translate(300 430)" filter="url(#f1)"><path d="M0 -50 L52 -32 V8 C52 40 28 62 0 72 C-28 62 -52 40 -52 8 V-32Z" fill="url(#g1)"/><path d="M-20 8 L-5 23 L24 -8" fill="none" stroke="#3b2a00" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg></div><div class="n">01</div><div class="nm">Vigía</div>
+<div class="t">Búho guardián: ve en la oscuridad lo que nadie más ve. Calmado, sabio, nunca alarmista.</div>
+<span class="tag" style="background:#8b6bff33;color:#b9a6ff">Sabio · confiable</span></div>
+
+<!-- 2 BYTE gato -->
+<div class="c"><div class="av"><svg viewBox="0 0 600 600">
+<defs><radialGradient id="b2" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#103a4d"/><stop offset="1" stop-color="#03111a"/></radialGradient>
+<linearGradient id="v2" x1="0" x2="1"><stop offset="0" stop-color="#00e5ff"/><stop offset="1" stop-color="#2ee59d"/></linearGradient>
+<filter id="f2"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="600" height="600" fill="url(#b2)"/>
+<path d="M150 260 L160 95 L270 185Z M450 260 L440 95 L330 185Z" fill="#161a33" stroke="#00e5ff" stroke-width="6" stroke-linejoin="round"/>
+<path d="M170 230 L176 140 L235 190Z M430 230 L424 140 L365 190Z" fill="#ff7aa8" opacity=".85"/>
+<ellipse cx="300" cy="330" rx="185" ry="165" fill="#161a33" stroke="#00e5ff" stroke-width="6"/>
+<rect x="125" y="255" width="350" height="78" rx="39" fill="url(#v2)" filter="url(#f2)"/>
+<rect x="125" y="255" width="350" height="78" rx="39" fill="none" stroke="#eaffff" stroke-width="4" opacity=".7"/>
+<g fill="#03111a"><ellipse cx="235" cy="294" rx="30" ry="22"/><ellipse cx="365" cy="294" rx="30" ry="22"/></g>
+<g fill="#eaffff"><circle cx="226" cy="287" r="8"/><circle cx="356" cy="287" r="8"/></g>
+<path d="M285 365 L315 365 L300 382Z" fill="#ff7aa8"/>
+<path d="M300 382 Q300 405 278 410 M300 382 Q300 405 322 410" fill="none" stroke="#eaffff" stroke-width="5" stroke-linecap="round"/>
+<g stroke="#00e5ff" stroke-width="4" stroke-linecap="round" opacity=".8" filter="url(#f2)"><path d="M215 375 H120 M215 395 L125 420 M385 375 H480 M385 395 L475 420"/></g>
+<path d="M175 465 Q300 520 425 465" fill="none" stroke="#ff3b5c" stroke-width="16" stroke-linecap="round"/>
+<g transform="translate(300 505)"><circle r="30" fill="#ffd23f"/><text y="11" text-anchor="middle" font-size="30" font-weight="900" fill="#3b2a00" font-family="Inter">!</text></g>
+</svg></div><div class="n">02</div><div class="nm">Byte</div>
+<div class="t">Gato negro con visor: curioso, rápido y algo pícaro. Huele la estafa antes que nadie.</div>
+<span class="tag" style="background:#00e5ff26;color:#7ff0ff">Cercano · viral</span></div>
+
+<!-- 3 BIT robot -->
+<div class="c"><div class="av"><svg viewBox="0 0 600 600">
+<defs><radialGradient id="b3" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#1d3f8a"/><stop offset="1" stop-color="#061230"/></radialGradient>
+<linearGradient id="h3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#b9c8e8"/></linearGradient>
+<filter id="f3"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="600" height="600" fill="url(#b3)"/>
+<path d="M300 150 V100" stroke="#b9c8e8" stroke-width="12"/><circle cx="300" cy="88" r="22" fill="#ff3b5c" filter="url(#f3)"/>
+<rect x="135" y="150" width="330" height="270" rx="80" fill="url(#h3)"/>
+<rect x="110" y="250" width="34" height="80" rx="14" fill="#7f93c4"/><rect x="456" y="250" width="34" height="80" rx="14" fill="#7f93c4"/>
+<rect x="170" y="195" width="260" height="175" rx="60" fill="#071a3d"/>
+<g fill="none" stroke="#3ad4ff" stroke-width="16" stroke-linecap="round" filter="url(#f3)"><path d="M215 285 Q240 252 265 285"/><path d="M335 285 Q360 252 385 285"/><path d="M265 325 Q300 350 335 325"/></g>
+<rect x="190" y="430" width="220" height="150" rx="40" fill="url(#h3)"/>
+<g transform="translate(300 500)"><path d="M0 -45 L45 -30 V5 C45 33 25 52 0 60 C-25 52 -45 33 -45 5 V-30Z" fill="#2ee59d"/><path d="M-17 5 L-4 18 L20 -8" fill="none" stroke="#063" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg></div><div class="n">03</div><div class="nm">Bit</div>
+<div class="t">Robot asistente: explica claro y paso a paso. Simpático pero muy técnico y preciso.</div>
+<span class="tag" style="background:#3ad4ff26;color:#9fe7ff">Técnico · amable</span></div>
+
+<!-- 4 ROCCO perro -->
+<div class="c"><div class="av"><svg viewBox="0 0 600 600">
+<defs><radialGradient id="b4" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#3a2a5e"/><stop offset="1" stop-color="#120a22"/></radialGradient>
+<linearGradient id="d4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb259"/><stop offset="1" stop-color="#e07a1f"/></linearGradient></defs>
+<rect width="600" height="600" fill="url(#b4)"/>
+<path d="M165 200 C95 220 90 380 140 420 C175 400 190 300 205 240Z M435 200 C505 220 510 380 460 420 C425 400 410 300 395 240Z" fill="#8a4a14"/>
+<ellipse cx="300" cy="300" rx="150" ry="160" fill="url(#d4)"/>
+<ellipse cx="300" cy="380" rx="95" ry="75" fill="#fff1dd"/>
+<circle cx="245" cy="285" r="22" fill="#2a1606"/><circle cx="355" cy="285" r="22" fill="#2a1606"/><circle cx="238" cy="277" r="8" fill="#fff"/><circle cx="348" cy="277" r="8" fill="#fff"/>
+<ellipse cx="300" cy="345" rx="32" ry="22" fill="#2a1606"/>
+<path d="M300 368 V390 M300 390 Q280 410 262 395 M300 390 Q320 410 338 395" fill="none" stroke="#2a1606" stroke-width="6" stroke-linecap="round"/>
+<path d="M150 260 C150 120 450 120 450 260" fill="none" stroke="#1a1a2e" stroke-width="20"/>
+<rect x="128" y="245" width="46" height="80" rx="18" fill="#2ee59d"/><rect x="426" y="245" width="46" height="80" rx="18" fill="#2ee59d"/>
+<path d="M150 320 Q170 420 250 430" fill="none" stroke="#1a1a2e" stroke-width="10" stroke-linecap="round"/><circle cx="255" cy="430" r="14" fill="#2ee59d"/>
+<path d="M190 470 Q300 520 410 470 L410 600 L190 600Z" fill="#2251ff"/>
+<g transform="translate(300 535)"><path d="M0 -30 L30 -20 V3 C30 22 17 35 0 40 C-17 35 -30 22 -30 3 V-20Z" fill="#ffd23f"/></g>
+</svg></div><div class="n">04</div><div class="nm">Rocco</div>
+<div class="t">Perro guardián de soporte técnico: leal, protector y paciente. Ideal para hablarle a papás y abuelos.</div>
+<span class="tag" style="background:#ffb25926;color:#ffc98a">Familiar · protector</span></div>
+
+<!-- 5 AGENTE SOMBRA -->
+<div class="c"><div class="av"><svg viewBox="0 0 600 600">
+<defs><radialGradient id="b5" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#ff2e88" stop-opacity=".55"/><stop offset=".45" stop-color="#3a1460"/><stop offset="1" stop-color="#07030f"/></radialGradient>
+<linearGradient id="l5" x1="0" x2="1"><stop offset="0" stop-color="#00e5ff"/><stop offset="1" stop-color="#8b6bff"/></linearGradient>
+<filter id="f5"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="600" height="600" fill="url(#b5)"/>
+<path d="M120 600 C130 470 200 420 300 420 C400 420 470 470 480 600Z" fill="#05030c"/>
+<path d="M230 420 L300 520 L370 420" fill="#1a0f2e"/>
+<ellipse cx="300" cy="300" rx="110" ry="130" fill="#05030c"/>
+<ellipse cx="300" cy="200" rx="190" ry="30" fill="#05030c"/>
+<path d="M190 205 C195 100 405 100 410 205Z" fill="#05030c"/>
+<rect x="190" y="180" width="220" height="20" fill="#ff2e88" opacity=".8"/>
+<g filter="url(#f5)"><rect x="205" y="270" width="85" height="50" rx="20" fill="url(#l5)"/><rect x="310" y="270" width="85" height="50" rx="20" fill="url(#l5)"/><rect x="288" y="288" width="24" height="10" fill="url(#l5)"/></g>
+<path d="M270 370 Q300 388 330 370" fill="none" stroke="#3a2a55" stroke-width="7" stroke-linecap="round"/>
+</svg></div><div class="n">05</div><div class="nm">Agente Sombra</div>
+<div class="t">Detective invisible: solo se ven sus lentes. Misterioso y elegante; encaja literal con "Invisible".</div>
+<span class="tag" style="background:#ff2e8826;color:#ff9cc6">Profesional · misterio</span></div>
+
+</div></body></html>
