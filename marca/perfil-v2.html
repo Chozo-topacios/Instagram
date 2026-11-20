@@ -1,0 +1,122 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Foto de perfil v2</title>
+<style>*{margin:0}body{background:#000}.v{width:1080px;height:1080px;position:relative;overflow:hidden}</style></head><body>
+
+<!-- D · BÚHO GUARDIÁN (mascota) -->
+<div class="v" id="d"><svg viewBox="0 0 1080 1080" width="1080" height="1080">
+<defs>
+ <radialGradient id="dbg" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#2a1f6b"/><stop offset=".55" stop-color="#120b33"/><stop offset="1" stop-color="#05030f"/></radialGradient>
+ <linearGradient id="dring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00e5ff"/><stop offset=".5" stop-color="#8b6bff"/><stop offset="1" stop-color="#ff2e88"/></linearGradient>
+ <linearGradient id="dbody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b3f8f"/><stop offset="1" stop-color="#191a4a"/></linearGradient>
+ <linearGradient id="dwing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c2f78"/><stop offset="1" stop-color="#11123a"/></linearGradient>
+ <radialGradient id="deye" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#eaffff"/><stop offset=".35" stop-color="#00e5ff"/><stop offset=".8" stop-color="#0077b6"/><stop offset="1" stop-color="#03204a"/></radialGradient>
+ <linearGradient id="dshield" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe066"/><stop offset="1" stop-color="#ff9f1c"/></linearGradient>
+ <filter id="dg" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="dsh"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".55"/></filter>
+ <pattern id="dcirc" width="120" height="120" patternUnits="userSpaceOnUse"><path d="M0 60 H40 L60 40 H120 M60 120 V80 L80 60" fill="none" stroke="#8b6bff" stroke-opacity=".18" stroke-width="3"/><circle cx="40" cy="60" r="5" fill="#8b6bff" fill-opacity=".3"/><circle cx="80" cy="60" r="5" fill="#00e5ff" fill-opacity=".3"/></pattern>
+</defs>
+<rect width="1080" height="1080" fill="url(#dbg)"/><rect width="1080" height="1080" fill="url(#dcirc)"/>
+<circle cx="540" cy="540" r="470" fill="none" stroke="url(#dring)" stroke-width="16" filter="url(#dg)" opacity=".9"/>
+<circle cx="540" cy="540" r="440" fill="none" stroke="url(#dring)" stroke-width="3" stroke-dasharray="6 18" opacity=".7"/>
+<g filter="url(#dsh)">
+ <!-- orejas -->
+ <path d="M330 300 L300 150 L440 255 Z" fill="#2c2f78"/><path d="M750 300 L780 150 L640 255 Z" fill="#2c2f78"/>
+ <path d="M335 290 L318 185 L410 255 Z" fill="#ff2e88" opacity=".85"/><path d="M745 290 L762 185 L670 255 Z" fill="#ff2e88" opacity=".85"/>
+ <!-- alas -->
+ <path d="M300 480 C210 560 220 760 330 860 C350 760 360 620 360 520 Z" fill="url(#dwing)"/>
+ <path d="M780 480 C870 560 860 760 750 860 C730 760 720 620 720 520 Z" fill="url(#dwing)"/>
+ <!-- cuerpo -->
+ <path d="M540 230 C760 230 820 400 810 560 C800 760 690 900 540 900 C390 900 280 760 270 560 C260 400 320 230 540 230 Z" fill="url(#dbody)" stroke="#8b6bff" stroke-width="8" stroke-opacity=".7"/>
+ <!-- plumas pecho -->
+ <g fill="none" stroke="#5c62c9" stroke-width="7" stroke-linecap="round" opacity=".55">
+  <path d="M440 640 q20 20 40 0 q20 20 40 0 q20 20 40 0 q20 20 40 0 q20 20 40 0"/></g>
+ <!-- antifaz -->
+ <path d="M300 430 C330 330 470 320 540 400 C610 320 750 330 780 430 C780 540 640 560 540 480 C440 560 300 540 300 430 Z" fill="#0d0e2e"/>
+ <!-- ojos -->
+ <g filter="url(#dg)">
+  <circle cx="420" cy="440" r="92" fill="url(#deye)"/><circle cx="660" cy="440" r="92" fill="url(#deye)"/></g>
+ <g fill="none" stroke="#03204a" stroke-width="6" opacity=".7"><circle cx="420" cy="440" r="64"/><circle cx="660" cy="440" r="64"/>
+  <path d="M420 360 V380 M420 500 V520 M340 440 H360 M480 440 H500 M660 360 V380 M660 500 V520 M580 440 H600 M720 440 H740"/></g>
+ <circle cx="420" cy="440" r="34" fill="#020b1f"/><circle cx="660" cy="440" r="34" fill="#020b1f"/>
+ <circle cx="404" cy="422" r="13" fill="#fff"/><circle cx="644" cy="422" r="13" fill="#fff"/>
+ <circle cx="436" cy="458" r="6" fill="#fff" opacity=".7"/><circle cx="676" cy="458" r="6" fill="#fff" opacity=".7"/>
+ <!-- pico -->
+ <path d="M540 490 L568 525 L540 570 L512 525 Z" fill="url(#dshield)"/>
+ <!-- escudo en el pecho -->
+ <g transform="translate(540 715) scale(1.1)" filter="url(#dg)">
+  <path d="M0 -70 L72 -45 V10 C72 55 40 85 0 100 C-40 85 -72 55 -72 10 V-45 Z" fill="url(#dshield)" stroke="#fff3c4" stroke-width="6"/>
+  <path d="M-30 12 L-8 34 L34 -12" fill="none" stroke="#3b2a00" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></g>
+</g>
+<!-- destellos -->
+<g fill="#fff"><path d="M200 330 l8 22 22 8 -22 8 -8 22 -8 -22 -22 -8 22 -8z" opacity=".8"/><path d="M880 760 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6z" opacity=".7"/><path d="M860 260 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5z" opacity=".6"/></g>
+</svg></div>
+
+<!-- E · ESCUDO 3D CON CIRCUITOS -->
+<div class="v" id="e"><svg viewBox="0 0 1080 1080" width="1080" height="1080">
+<defs>
+ <radialGradient id="ebg" cx="50%" cy="48%" r="62%"><stop offset="0" stop-color="#123a7a"/><stop offset=".5" stop-color="#081633"/><stop offset="1" stop-color="#02050e"/></radialGradient>
+ <linearGradient id="erim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9fbff"/><stop offset=".3" stop-color="#7fdcff"/><stop offset=".6" stop-color="#2a6fd6"/><stop offset="1" stop-color="#0b2a6b"/></linearGradient>
+ <linearGradient id="eface" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e5bd8"/><stop offset=".55" stop-color="#0d2f86"/><stop offset="1" stop-color="#071a4d"/></linearGradient>
+ <linearGradient id="egold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1a8"/><stop offset=".45" stop-color="#ffc83d"/><stop offset="1" stop-color="#d98200"/></linearGradient>
+ <linearGradient id="egloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <filter id="eg" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="esh"><feDropShadow dx="0" dy="26" stdDeviation="22" flood-color="#000" flood-opacity=".6"/></filter>
+</defs>
+<rect width="1080" height="1080" fill="url(#ebg)"/>
+<!-- rayos -->
+<g opacity=".18" stroke="#7fdcff" stroke-width="4">
+ <path d="M540 520 L540 0 M540 520 L1080 180 M540 520 L1080 860 M540 520 L540 1080 M540 520 L0 860 M540 520 L0 180 M540 520 L300 0 M540 520 L780 0 M540 520 L1080 520 M540 520 L0 520 M540 520 L300 1080 M540 520 L780 1080"/></g>
+<!-- circuitos -->
+<g fill="none" stroke="#3ad4ff" stroke-width="7" stroke-linecap="round" filter="url(#eg)" opacity=".9">
+ <path d="M300 420 H180 L130 370 H60"/><path d="M300 560 H200 L150 610 V700"/><path d="M780 420 H900 L950 370 H1020"/><path d="M780 560 H880 L930 610 V700"/>
+ <path d="M440 860 V950 L400 990"/><path d="M640 860 V950 L680 990"/></g>
+<g fill="#eaffff" filter="url(#eg)"><circle cx="60" cy="370" r="12"/><circle cx="150" cy="700" r="12"/><circle cx="1020" cy="370" r="12"/><circle cx="930" cy="700" r="12"/><circle cx="400" cy="990" r="12"/><circle cx="680" cy="990" r="12"/></g>
+<!-- órbita -->
+<ellipse cx="540" cy="540" rx="440" ry="150" fill="none" stroke="#ff3b5c" stroke-width="6" transform="rotate(-18 540 540)" opacity=".85" filter="url(#eg)"/>
+<circle cx="168" cy="645" r="18" fill="#ff3b5c" filter="url(#eg)"/>
+<!-- escudo -->
+<g filter="url(#esh)">
+ <path d="M540 150 L820 255 V500 C820 710 700 850 540 920 C380 850 260 710 260 500 V255 Z" fill="url(#erim)"/>
+ <path d="M540 200 L775 290 V500 C775 680 670 800 540 862 C410 800 305 680 305 500 V290 Z" fill="url(#eface)"/>
+ <path d="M540 200 L775 290 V420 C640 380 440 420 305 520 V290 Z" fill="url(#egloss)" opacity=".7"/>
+ <!-- candado dorado -->
+ <g transform="translate(540 560)" filter="url(#eg)">
+  <path d="M-80 -40 V-95 a80 80 0 0 1 160 0 V-40" fill="none" stroke="url(#egold)" stroke-width="38" stroke-linecap="round"/>
+  <rect x="-130" y="-50" width="260" height="210" rx="40" fill="url(#egold)"/>
+  <rect x="-130" y="-50" width="260" height="70" rx="40" fill="#fff" opacity=".25"/>
+  <circle cx="0" cy="40" r="30" fill="#5a3500"/><path d="M-14 50 H14 L22 110 H-22 Z" fill="#5a3500"/></g>
+</g>
+<!-- parte delantera de la órbita -->
+<path d="M120 650 A440 150 -18 0 0 960 430" fill="none" stroke="#ff3b5c" stroke-width="6" transform="rotate(0)" opacity="0"/>
+<g fill="#fff"><path d="M820 200 l9 24 24 9 -24 9 -9 24 -9 -24 -24 -9 24 -9z"/><path d="M250 210 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6z" opacity=".7"/></g>
+</svg></div>
+
+<!-- F · RADAR DE AMENAZAS -->
+<div class="v" id="f"><svg viewBox="0 0 1080 1080" width="1080" height="1080">
+<defs>
+ <radialGradient id="fbg" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#0b2b3a"/><stop offset=".6" stop-color="#04121b"/><stop offset="1" stop-color="#010508"/></radialGradient>
+ <linearGradient id="fsweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2ee59d" stop-opacity="0"/><stop offset="1" stop-color="#2ee59d" stop-opacity=".75"/></linearGradient>
+ <radialGradient id="fcore" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#7dffcf"/><stop offset="1" stop-color="#0a8f5a"/></radialGradient>
+ <filter id="fg" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1080" height="1080" fill="url(#fbg)"/>
+<g fill="none" stroke="#2ee59d" stroke-opacity=".35" stroke-width="4"><circle cx="540" cy="540" r="140"/><circle cx="540" cy="540" r="260"/><circle cx="540" cy="540" r="380"/></g>
+<circle cx="540" cy="540" r="470" fill="none" stroke="#2ee59d" stroke-width="14" filter="url(#fg)"/>
+<g stroke="#2ee59d" stroke-opacity=".3" stroke-width="3"><path d="M540 70 V1010 M70 540 H1010"/></g>
+<g id="ticks" stroke="#2ee59d" stroke-width="6" stroke-opacity=".8"></g>
+<!-- barrido -->
+<path d="M540 540 L540 70 A470 470 0 0 1 925 270 Z" fill="url(#fsweep)" opacity=".55" transform="rotate(10 540 540)"/>
+<path d="M540 540 L925 270" stroke="#9dffd6" stroke-width="8" transform="rotate(10 540 540)" filter="url(#fg)"/>
+<!-- puntos seguros -->
+<g fill="#2ee59d" filter="url(#fg)"><circle cx="320" cy="380" r="12"/><circle cx="300" cy="720" r="10"/><circle cx="700" cy="820" r="12"/><circle cx="820" cy="640" r="9"/></g>
+<!-- amenaza -->
+<g filter="url(#fg)"><circle cx="760" cy="330" r="30" fill="#ff3b5c"/></g>
+<circle cx="760" cy="330" r="60" fill="none" stroke="#ff3b5c" stroke-width="6" opacity=".8"/><circle cx="760" cy="330" r="95" fill="none" stroke="#ff3b5c" stroke-width="4" opacity=".4"/>
+<!-- núcleo escudo -->
+<g transform="translate(540 540) scale(1.6)" filter="url(#fg)">
+ <path d="M0 -110 L95 -75 V5 C95 75 50 120 0 140 C-50 120 -95 75 -95 5 V-75 Z" fill="url(#fcore)" stroke="#d9fff0" stroke-width="8"/>
+ <rect x="-12" y="-62" width="24" height="100" rx="11" fill="#04121b"/><circle cx="0" cy="72" r="15" fill="#04121b"/></g>
+</svg></div>
+<script>
+const g=document.getElementById('ticks');let s='';for(let i=0;i<72;i++){const a=i*5*Math.PI/180,r1=i%6?440:420,r2=455;s+=`<line x1="${540+Math.cos(a)*r1}" y1="${540+Math.sin(a)*r1}" x2="${540+Math.cos(a)*r2}" y2="${540+Math.sin(a)*r2}"/>`;}g.innerHTML=s;
+</script>
+</body></html>
