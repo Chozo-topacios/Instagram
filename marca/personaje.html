@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Visi personaje</title>
+<style>*{margin:0;box-sizing:border-box}body{background:#000;font-family:Inter,system-ui,sans-serif;color:#fff}
+.v{position:relative;overflow:hidden}
+#hoja{width:1920px;height:1080px;background:radial-gradient(1200px 700px at 30% 20%,#2a1f6b,#0b0726 60%,#05030f)}
+.t{position:absolute;left:90px;top:70px}.t h1{font-size:96px;font-weight:900;letter-spacing:-2px}.t h1 span{color:#00e5ff}
+.t p{font-size:34px;color:#b9a0dc;font-weight:600;margin-top:6px}
+.lema{position:absolute;left:90px;top:300px;width:560px;font-size:30px;line-height:1.45;color:#dcd2f5}
+.lema b{color:#fff}.lema .q{display:inline-block;margin-top:22px;font-size:44px;font-weight:900;color:#00e5ff;line-height:1.1}
+.sw{position:absolute;left:90px;bottom:80px;display:flex;gap:12px}.sw div{width:100px;height:100px;font-size:17px!important;border-radius:24px;display:flex;align-items:flex-end;padding:12px;font-size:20px;font-weight:800;color:#0a0f2a}
+.grid{position:absolute;right:60px;top:70px;width:1160px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.c{background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.1);border-radius:32px;padding:14px 10px 18px;text-align:center}
+.c svg{width:300px;height:350px}.c b{display:block;font-size:30px}.c small{font-size:21px;color:#b9a0dc}
+</style></head><body>
+<div class="v" id="hoja">
+ <div class="t"><h1>VISI <span>·</span></h1><p>Mascota de Brecha Invisible</p></div>
+ <div class="lema">Un guardián de <b>cristal</b>: por eso es casi invisible. Su <b>visor</b> ve las brechas que nadie más ve, y su antena es una <b>grieta de luz</b>, la brecha.<br>Curioso, directo y protector. Nunca da miedo: te avisa y te calma.<br><span class="q">"Lo invisible,<br>yo lo veo."</span></div>
+ <div class="sw"><div style="background:#00e5ff">Cian</div><div style="background:#8b6bff">Violeta</div><div style="background:#ff2e88">Magenta</div><div style="background:#2ee59d">Verde</div><div style="background:#ff3b5c">Rojo</div></div>
+ <div class="grid" id="g"></div>
+</div>
+<div class="v" id="perfil" style="width:1080px;height:1080px"><svg viewBox="0 0 1080 1080" width="1080" height="1080" id="ps"></svg></div>
+<script src="visi.js"></script>
+<script>
+const ex=[["neutral","Neutral","explica"],["alerta","Alerta","gancho / peligro"],["sospecha","Sospecha","¿es estafa?"],["sorpresa","Sorpresa","cifras y datos"],["feliz","Feliz","solución / calma"],["guino","Guiño","CTA: guárdalo"]];
+document.getElementById("g").innerHTML=ex.map(([k,n,d])=>`<div class="c"><svg viewBox="0 0 600 700">${visi(k)}</svg><b>${n}</b><small>${d}</small></div>`).join("");
+document.getElementById("ps").innerHTML=`
+<defs>
+ <radialGradient id="pbg" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#2a1f6b"/><stop offset=".55" stop-color="#120b33"/><stop offset="1" stop-color="#05030f"/></radialGradient>
+ <linearGradient id="pr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00e5ff"/><stop offset=".5" stop-color="#8b6bff"/><stop offset="1" stop-color="#ff2e88"/></linearGradient>
+ <filter id="pg" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="pc" width="120" height="120" patternUnits="userSpaceOnUse"><path d="M0 60 H40 L60 40 H120 M60 120 V80 L80 60" fill="none" stroke="#8b6bff" stroke-opacity=".16" stroke-width="3"/></pattern>
+</defs>
+<rect width="1080" height="1080" fill="url(#pbg)"/><rect width="1080" height="1080" fill="url(#pc)"/>
+<path d="M930 170 L870 330 L935 390 L855 570 L925 630 L850 850 L890 960" fill="none" stroke="#ff2e88" stroke-width="34" stroke-linejoin="round" filter="url(#pg)" opacity=".85"/>
+<path d="M930 170 L870 330 L935 390 L855 570 L925 630 L850 850 L890 960" fill="none" stroke="#ffe0f0" stroke-width="10" stroke-linejoin="round"/>
+<circle cx="540" cy="540" r="490" fill="none" stroke="url(#pr)" stroke-width="18" filter="url(#pg)"/>
+<g transform="translate(120 150) scale(1.3)">${visi("guino")}</g>
+<g fill="#fff"><path d="M210 260 l8 22 22 8 -22 8 -8 22 -8 -22 -22 -8 22 -8z" opacity=".85"/><path d="M880 780 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6z" opacity=".7"/></g>`;
+</script></body></html>

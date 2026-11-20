@@ -1,0 +1,88 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Personajes Brecha Invisible</title>
+<style>*{margin:0;box-sizing:border-box}body{background:#0a0b14;font-family:Inter,system-ui,sans-serif;color:#fff}
+#sheet{width:2040px;padding:50px 40px 60px;display:grid;grid-template-columns:repeat(5,1fr);gap:28px}
+h1{grid-column:1/-1;font-size:56px;font-weight:900;letter-spacing:-1px;margin-bottom:10px}h1 span{color:#00e5ff}
+.c{background:#131528;border:2px solid #23264a;border-radius:28px;padding:22px;text-align:center}
+.c svg{width:300px;height:300px;border-radius:50%;display:block;margin:0 auto 18px}
+.n{font-size:40px;font-weight:900}.t{font-size:22px;color:#00e5ff;font-weight:700;margin:4px 0 10px;text-transform:uppercase;letter-spacing:2px}
+.d{font-size:21px;line-height:1.35;color:#c4c8e8;text-align:left}.d b{color:#fff}
+.v{width:1080px;height:1080px}</style></head><body>
+<div id="sheet"><h1>Brecha <span>Invisible</span> · 5 opciones de personaje</h1></div>
+<div id="solo"></div>
+<script>
+const frame=(id,c1,c2,inner,bg1,bg2)=>`<svg viewBox="0 0 1080 1080" id="${id}"><defs>
+<radialGradient id="${id}bg" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="${bg1}"/><stop offset="1" stop-color="${bg2}"/></radialGradient>
+<linearGradient id="${id}ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient>
+<filter id="${id}g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="${id}sh"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".5"/></filter>
+<pattern id="${id}p" width="120" height="120" patternUnits="userSpaceOnUse"><path d="M0 60 H40 L60 40 H120 M60 120 V80 L80 60" fill="none" stroke="${c1}" stroke-opacity=".14" stroke-width="3"/></pattern></defs>
+<rect width="1080" height="1080" fill="url(#${id}bg)"/><rect width="1080" height="1080" fill="url(#${id}p)"/>
+<circle cx="540" cy="540" r="470" fill="none" stroke="url(#${id}ring)" stroke-width="16" filter="url(#${id}g)"/>
+<g filter="url(#${id}sh)">${inner}</g>
+<g fill="#fff"><path d="M200 330 l8 22 22 8 -22 8 -8 22 -8 -22 -22 -8 22 -8z" opacity=".8"/><path d="M870 780 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6z" opacity=".7"/></g></svg>`;
+
+const P=[
+{id:"vigia",n:"Vigía",t:"Búho guardián",c1:"#00e5ff",c2:"#ff2e88",bg1:"#2a1f6b",bg2:"#05030f",
+ d:"<b>Ve en la oscuridad</b> lo que otros no ven: las brechas invisibles. Sabio, tranquilo, explica con calma. <b>Tono:</b> mentor confiable.",
+ svg:`<path d="M330 300 L300 150 L440 255 Z" fill="#2c2f78"/><path d="M750 300 L780 150 L640 255 Z" fill="#2c2f78"/>
+ <path d="M335 290 L318 185 L410 255 Z" fill="#ff2e88"/><path d="M745 290 L762 185 L670 255 Z" fill="#ff2e88"/>
+ <path d="M300 480 C210 560 220 760 330 860 C350 760 360 620 360 520 Z" fill="#23266a"/><path d="M780 480 C870 560 860 760 750 860 C730 760 720 620 720 520 Z" fill="#23266a"/>
+ <path d="M540 230 C760 230 820 400 810 560 C800 760 690 900 540 900 C390 900 280 760 270 560 C260 400 320 230 540 230 Z" fill="#33378a" stroke="#8b6bff" stroke-width="8"/>
+ <path d="M300 430 C330 330 470 320 540 400 C610 320 750 330 780 430 C780 540 640 560 540 480 C440 560 300 540 300 430 Z" fill="#0d0e2e"/>
+ <circle cx="420" cy="440" r="92" fill="#00c8f0"/><circle cx="660" cy="440" r="92" fill="#00c8f0"/><circle cx="420" cy="440" r="64" fill="none" stroke="#03204a" stroke-width="6"/><circle cx="660" cy="440" r="64" fill="none" stroke="#03204a" stroke-width="6"/>
+ <circle cx="420" cy="440" r="34" fill="#020b1f"/><circle cx="660" cy="440" r="34" fill="#020b1f"/><circle cx="404" cy="422" r="13" fill="#fff"/><circle cx="644" cy="422" r="13" fill="#fff"/>
+ <path d="M540 490 L568 525 L540 570 L512 525 Z" fill="#ffb627"/>
+ <g transform="translate(540 715) scale(1.1)"><path d="M0 -70 L72 -45 V10 C72 55 40 85 0 100 C-40 85 -72 55 -72 10 V-45 Z" fill="#ffc83d" stroke="#fff3c4" stroke-width="6"/><path d="M-30 12 L-8 34 L34 -12" fill="none" stroke="#3b2a00" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></g>`},
+{id:"invi",n:"Invi",t:"Fantasma digital",c1:"#7df9ff",c2:"#b56bff",bg1:"#14305a",bg2:"#030812",
+ d:"<b>Es literalmente invisible</b>: se cuela por las brechas para mostrarte cómo entran los atacantes. Curioso, travieso y simpático. <b>Tono:</b> cercano y divertido.",
+ svg:`<defs><linearGradient id="gh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#bff6ff" stop-opacity=".95"/><stop offset="1" stop-color="#7df9ff" stop-opacity=".35"/></linearGradient></defs>
+ <path d="M540 190 C740 190 800 350 800 520 V790 L745 750 L690 800 L635 750 L580 800 L525 750 L470 800 L415 750 L360 800 L305 750 L280 790 V520 C280 350 340 190 540 190 Z" fill="url(#gh)"/>
+ <g fill="#7df9ff"><rect x="330" y="830" width="34" height="34" opacity=".6"/><rect x="450" y="850" width="26" height="26" opacity=".45"/><rect x="600" y="840" width="30" height="30" opacity=".55"/><rect x="720" y="860" width="22" height="22" opacity=".4"/><rect x="530" y="895" width="18" height="18" opacity=".3"/></g>
+ <rect x="330" y="380" width="420" height="130" rx="65" fill="#0b1630"/><rect x="345" y="395" width="390" height="100" rx="50" fill="#00e5ff" opacity=".2"/>
+ <ellipse cx="450" cy="445" rx="38" ry="44" fill="#7df9ff"/><ellipse cx="630" cy="445" rx="38" ry="44" fill="#7df9ff"/><circle cx="438" cy="430" r="12" fill="#fff"/><circle cx="618" cy="430" r="12" fill="#fff"/>
+ <path d="M490 590 Q540 635 590 590" fill="none" stroke="#0b1630" stroke-width="16" stroke-linecap="round"/>
+ <ellipse cx="390" cy="580" rx="34" ry="20" fill="#ff7ab8" opacity=".6"/><ellipse cx="690" cy="580" rx="34" ry="20" fill="#ff7ab8" opacity=".6"/>
+ <path d="M540 380 V320" stroke="#b56bff" stroke-width="10"/><circle cx="540" cy="310" r="16" fill="#b56bff"/>`},
+{id:"kamo",n:"Kamo",t:"Camaleón detective",c1:"#2ee59d",c2:"#ffd23f",bg1:"#0f3b2e",bg2:"#020a07",
+ d:"<b>Maestro del camuflaje</b>: conoce todos los disfraces de los estafadores, porque él también sabe esconderse. Sus ojos giran y lo vigilan todo. <b>Tono:</b> astuto e ingenioso.",
+ svg:`<defs><linearGradient id="kb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3ff2a8"/><stop offset=".6" stop-color="#14a58a"/><stop offset="1" stop-color="#6b4bff"/></linearGradient></defs>
+ <path d="M200 760 H880" stroke="#5a3d1e" stroke-width="34" stroke-linecap="round"/><path d="M700 760 l50 -60" stroke="#5a3d1e" stroke-width="20" stroke-linecap="round"/>
+ <path d="M720 640 C860 640 880 480 780 470 C700 462 700 560 760 560 C800 560 800 510 775 510" fill="none" stroke="url(#kb)" stroke-width="56" stroke-linecap="round"/>
+ <ellipse cx="560" cy="620" rx="210" ry="140" fill="url(#kb)"/>
+ <path d="M420 700 V770 M520 735 V775 M640 735 V775 M720 690 V770" stroke="#0d6e5c" stroke-width="30" stroke-linecap="round"/>
+ <path d="M240 540 C240 400 380 330 470 380 L540 460 C520 560 430 620 330 610 C270 600 240 580 240 540 Z" fill="url(#kb)"/>
+ <path d="M300 360 L360 300 L420 350" fill="#3ff2a8"/>
+ <circle cx="410" cy="470" r="86" fill="#14a58a" stroke="#3ff2a8" stroke-width="10"/><circle cx="410" cy="470" r="56" fill="#ffd23f"/>
+ <circle cx="425" cy="470" r="26" fill="#111"/><path d="M410 400 V425 M410 515 V540 M340 470 H365 M455 470 H480" stroke="#111" stroke-width="6"/><circle cx="415" cy="458" r="8" fill="#fff"/>
+ <path d="M260 570 Q300 590 340 572" fill="none" stroke="#0d6e5c" stroke-width="10" stroke-linecap="round"/>
+ <g fill="#ffd23f" opacity=".85"><circle cx="560" cy="560" r="16"/><circle cx="620" cy="600" r="12"/><circle cx="520" cy="640" r="10"/><circle cx="660" cy="550" r="10"/></g>`},
+{id:"bit",n:"Bit",t:"Robot-dron escáner",c1:"#3ad4ff",c2:"#ff3b5c",bg1:"#122a55",bg2:"#02050e",
+ d:"<b>Un dron que patrulla internet</b> y escanea links, apps y mensajes. Su ojo cambia de color: verde = seguro, rojo = estafa. <b>Tono:</b> rápido, directo y preciso.",
+ svg:`<defs><radialGradient id="bm" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#cfd8ea"/><stop offset="1" stop-color="#4a5a7c"/></radialGradient>
+ <radialGradient id="be" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#eaffff"/><stop offset=".4" stop-color="#3ad4ff"/><stop offset="1" stop-color="#0a3a7a"/></radialGradient></defs>
+ <ellipse cx="540" cy="880" rx="200" ry="34" fill="#3ad4ff" opacity=".35"/>
+ <path d="M440 800 L400 880 M640 800 L680 880" stroke="#3ad4ff" stroke-width="8" opacity=".5"/>
+ <path d="M300 520 H200 M780 520 H880" stroke="#8a97b8" stroke-width="22" stroke-linecap="round"/><ellipse cx="180" cy="490" rx="80" ry="16" fill="#8a97b8"/><ellipse cx="900" cy="490" rx="80" ry="16" fill="#8a97b8"/>
+ <circle cx="540" cy="540" r="270" fill="url(#bm)"/>
+ <path d="M540 270 V200" stroke="#8a97b8" stroke-width="16"/><circle cx="540" cy="186" r="24" fill="#ff3b5c"/>
+ <rect x="340" y="440" width="400" height="200" rx="100" fill="#0a1124"/>
+ <circle cx="540" cy="540" r="78" fill="url(#be)"/><circle cx="540" cy="540" r="30" fill="#04122b"/><circle cx="522" cy="520" r="12" fill="#fff"/>
+ <rect x="380" y="535" width="320" height="8" fill="#3ad4ff" opacity=".6"/>
+ <path d="M470 700 Q540 730 610 700" fill="none" stroke="#4a5a7c" stroke-width="12" stroke-linecap="round"/>`},
+{id:"pixel",n:"Pixel",t:"Gato hacker ético",c1:"#ffd23f",c2:"#39ff88",bg1:"#1c2a1f",bg2:"#030604",
+ d:"<b>Gato negro que ve en la oscuridad</b> y tiene 7 vidas digitales. Hacker <b>ético</b>: usa sus trucos para defenderte. Con audífonos y actitud. <b>Tono:</b> cool, juvenil, con humor.",
+ svg:`<path d="M320 380 L300 170 L470 300 Z" fill="#15161c"/><path d="M760 380 L780 170 L610 300 Z" fill="#15161c"/>
+ <path d="M330 350 L322 230 L430 305 Z" fill="#39ff88" opacity=".5"/><path d="M750 350 L758 230 L650 305 Z" fill="#39ff88" opacity=".5"/>
+ <path d="M540 260 C780 260 840 420 830 560 C820 740 690 840 540 840 C390 840 260 740 250 560 C240 420 300 260 540 260 Z" fill="#1b1d25" stroke="#39ff88" stroke-width="6" stroke-opacity=".5"/>
+ <path d="M250 520 C250 330 830 330 830 520" fill="none" stroke="#2b2e3a" stroke-width="34"/>
+ <rect x="200" y="470" width="80" height="150" rx="36" fill="#ffd23f"/><rect x="800" y="470" width="80" height="150" rx="36" fill="#ffd23f"/>
+ <path d="M240 610 Q260 730 400 740" fill="none" stroke="#2b2e3a" stroke-width="14"/><circle cx="410" cy="740" r="20" fill="#ffd23f"/>
+ <ellipse cx="430" cy="500" rx="70" ry="80" fill="#39ff88"/><ellipse cx="650" cy="500" rx="70" ry="80" fill="#39ff88"/>
+ <ellipse cx="430" cy="500" rx="16" ry="62" fill="#07130b"/><ellipse cx="650" cy="500" rx="16" ry="62" fill="#07130b"/><circle cx="410" cy="470" r="12" fill="#fff"/><circle cx="630" cy="470" r="12" fill="#fff"/>
+ <path d="M520 610 L560 610 L540 635 Z" fill="#ff7ab8"/><path d="M540 635 Q510 670 485 650 M540 635 Q570 670 595 650" fill="none" stroke="#9aa0b5" stroke-width="7" stroke-linecap="round"/>
+ <g stroke="#9aa0b5" stroke-width="5" opacity=".7"><path d="M470 625 L330 600 M470 645 L335 660 M610 625 L750 600 M610 645 L745 660"/></g>`}
+];
+const sheet=document.getElementById('sheet'),solo=document.getElementById('solo');
+P.forEach(p=>{sheet.insertAdjacentHTML('beforeend',`<div class="c">${frame(p.id,p.c1,p.c2,p.svg,p.bg1,p.bg2)}<div class="n">${p.n}</div><div class="t">${p.t}</div><div class="d">${p.d}</div></div>`);
+ solo.insertAdjacentHTML('beforeend',`<div class="v" id="solo-${p.id}">${frame('s'+p.id,p.c1,p.c2,p.svg,p.bg1,p.bg2).replace('<svg ','<svg width="1080" height="1080" ')}</div>`);});
+</script></body></html>
