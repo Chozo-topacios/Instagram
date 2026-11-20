@@ -31,7 +31,9 @@
   #top{position:absolute;top:110px;left:70px;right:70px;display:flex;align-items:center;gap:22px}
   .badge{display:flex;align-items:center;gap:16px;padding:16px 28px;border-radius:999px;font-weight:800;font-size:32px;letter-spacing:3px;text-transform:uppercase}
   .badge .dot{width:22px;height:22px;border-radius:50%}
-  #date{margin-left:auto;font-size:30px;font-weight:700;color:var(--mute);letter-spacing:2px}
+  #date{margin-left:auto;display:flex;align-items:center;gap:14px;font-size:28px;font-weight:900;color:var(--ink);letter-spacing:3px;text-transform:uppercase}
+  #date .mk{width:74px;height:74px;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 40%,#ff2e8899,#3a1460 55%,#07030f);border:3px solid var(--line)}
+  #date .mk svg{width:100%;height:100%}
   /* escenas */
   .scene{position:absolute;left:0;right:0;top:230px;height:1000px;opacity:0;visibility:hidden}
   .col{position:absolute;left:60px;right:60px;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;gap:34px;text-align:center}
@@ -44,6 +46,7 @@
   .card{background:var(--panel);border:3px solid var(--line);border-radius:32px}
   .ico{width:340px;height:340px}
   .ico svg{width:100%;height:100%}
+  .agc svg,.ag svg{width:100%;height:100%;display:block}
   /* subtítulos */
   #cap{position:absolute;left:80px;right:150px;top:1250px;min-height:200px;display:flex;align-items:flex-start;justify-content:center}
   #capbox{font-weight:800;text-align:center}
@@ -78,6 +81,77 @@
 <div id="ui"><button id="play">▶ Reproducir con voz</button><span id="clock">0.0s</span></div>
 <audio id="aud" src="voz.mp3" preload="auto"></audio>
 
+<script>// Agente Sombra · personaje de Brecha Invisible.
+// agenteSVG(expresion, opciones) -> string <svg> (viewBox 0 0 600 600, fondo transparente)
+// expresiones: "neutral" | "alerta" | "calma" | "guino" | "lupa" | "pensando"
+// opciones: { brillo: 0..1 (intensidad de los lentes), id: prefijo único para defs }
+(function (root) {
+  const PAL = {
+    neutral:  ["#00e5ff", "#8b6bff"],
+    alerta:   ["#ff3b5c", "#ff7a45"],
+    calma:    ["#2ee59d", "#00e5ff"],
+    guino:    ["#00e5ff", "#ff2e88"],
+    lupa:     ["#00e5ff", "#8b6bff"],
+    pensando: ["#8b6bff", "#ff2e88"],
+  };
+  function agenteSVG(expr = "neutral", o = {}) {
+    const id = o.id || ("ag" + Math.random().toString(36).slice(2, 7));
+    const [c1, c2] = PAL[expr] || PAL.neutral;
+    const br = o.brillo == null ? 1 : o.brillo;
+    const coat = "#07040f", coat2 = "#140b26", band = "#ff2e88";
+    // boca
+    const mouth = {
+      neutral:  `<path d="M268 372 Q300 388 332 372" fill="none" stroke="#3a2a55" stroke-width="7" stroke-linecap="round"/>`,
+      alerta:   `<ellipse cx="300" cy="380" rx="16" ry="20" fill="#3a2a55"/>`,
+      calma:    `<path d="M262 366 Q300 400 338 366" fill="none" stroke="#3a2a55" stroke-width="8" stroke-linecap="round"/>`,
+      guino:    `<path d="M268 376 Q305 392 338 364" fill="none" stroke="#3a2a55" stroke-width="8" stroke-linecap="round"/>`,
+      lupa:     `<path d="M272 374 Q300 386 328 374" fill="none" stroke="#3a2a55" stroke-width="7" stroke-linecap="round"/>`,
+      pensando: `<path d="M276 380 Q296 372 326 380" fill="none" stroke="#3a2a55" stroke-width="7" stroke-linecap="round"/>`,
+    }[expr] || "";
+    // lentes
+    const lensL = `<rect x="205" y="270" width="85" height="50" rx="20" fill="url(#${id}l)"/>`;
+    const lensR = expr === "guino"
+      ? `<path d="M318 300 Q352 280 388 300" fill="none" stroke="url(#${id}l)" stroke-width="14" stroke-linecap="round"/>`
+      : `<rect x="310" y="270" width="85" height="50" rx="20" fill="url(#${id}l)"/>`;
+    const bridge = `<rect x="288" y="288" width="24" height="10" fill="url(#${id}l)"/>`;
+    const lensFx = expr === "alerta"
+      ? `<g fill="#1a0306"><rect x="242" y="279" width="10" height="22" rx="4"/><circle cx="247" cy="308" r="5"/><rect x="347" y="279" width="10" height="22" rx="4"/><circle cx="352" cy="308" r="5"/></g>`
+      : expr === "pensando"
+      ? `<g fill="#fff" opacity=".9"><circle cx="270" cy="285" r="7"/><circle cx="375" cy="285" r="7"/></g>`
+      : `<g fill="#fff" opacity=".85"><rect x="216" y="278" width="26" height="7" rx="3"/><rect x="321" y="278" width="26" height="7" rx="3"/></g>`;
+    const extra = expr === "lupa"
+      ? `<g transform="translate(430 455) rotate(-20)"><rect x="-12" y="40" width="24" height="95" rx="10" fill="#2a1a40"/><circle r="62" fill="${c1}" fill-opacity=".18" stroke="#e8e6ff" stroke-width="14"/><path d="M-30 -22 A40 40 0 0 1 10 -42" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity=".8"/></g>
+         <ellipse cx="395" cy="560" rx="40" ry="30" fill="${coat}"/>`
+      : expr === "pensando"
+      ? `<path d="M240 600 C250 520 300 470 340 430 C360 412 385 420 380 445 C372 480 330 500 330 600Z" fill="${coat2}"/><circle cx="350" cy="430" r="26" fill="${coat2}"/>`
+      : expr === "alerta"
+      ? `<g transform="translate(470 220)"><path d="M0 -60 L52 30 H-52Z" fill="${c1}" stroke="#fff" stroke-width="6" stroke-linejoin="round"/><rect x="-6" y="-28" width="12" height="36" rx="5" fill="#fff"/><circle cx="0" cy="20" r="7" fill="#fff"/></g>`
+      : "";
+    return `<svg viewBox="0 0 600 600" width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="${id}l" x1="0" x2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient>
+ <linearGradient id="${id}c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${coat2}"/><stop offset="1" stop-color="${coat}"/></linearGradient>
+ <filter id="${id}g" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="${10 * br + 2}" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<path d="M115 600 C125 470 200 420 300 420 C400 420 475 470 485 600Z" fill="url(#${id}c)"/>
+<path d="M230 420 L300 525 L370 420 L345 420 L300 470 L255 420Z" fill="#241640"/>
+<path d="M262 430 L300 470 L338 430 L300 600Z" fill="${coat}"/>
+<path d="M300 470 L318 492 L300 560 L282 492Z" fill="${band}" opacity=".9"/>
+<ellipse cx="300" cy="300" rx="110" ry="130" fill="${coat}"/>
+<ellipse cx="300" cy="200" rx="195" ry="32" fill="${coat}"/>
+<path d="M188 206 C192 96 408 96 412 206Z" fill="${coat}"/>
+<path d="M196 160 C240 150 360 150 404 160" fill="none" stroke="#2a1a45" stroke-width="6"/>
+<rect x="190" y="178" width="220" height="22" fill="${band}"/>
+<g filter="url(#${id}g)" opacity="${0.35 + 0.65 * br}">${lensL}${lensR}${bridge}</g>
+${lensFx}
+${mouth}
+${extra}
+</svg>`;
+  }
+  root.agenteSVG = agenteSVG;
+  if (typeof module !== "undefined") module.exports = { agenteSVG };
+})(typeof window !== "undefined" ? window : globalThis);
+</script>
 <script>
 /* VISI · mascota de Brecha Invisible.
    visi(expresion, opciones) -> contenido SVG para un viewBox "0 0 600 700".
@@ -146,7 +220,7 @@ function visi(expr, o) {
 }
 if (typeof module !== "undefined") module.exports = { visi };
 
-const SPEC = {"handle": "Brecha Invisible · ciberseguridad sin rollos", "fecha": "NOV 2026", "velocidad": 0.86, "id": "TEMA-03", "titulo": "Estafa con voz clonada por IA", "formato": "simulacion", "tema": "papel", "subtitulos": "barra", "transicion": "slide", "insignia": "Estafa con IA", "escenas": [{"tipo": "titular", "modo": "peligro", "icono": "telefono", "texto": "Si tu mamá te llama *llorando*…", "sub": "puede *no* ser tu mamá.", "lineas": [{"texto": "Si tu mamá te llama llorando pidiendo dinero…"}, {"texto": "…puede no ser tu mamá."}]}, {"tipo": "contador", "modo": "peligro", "valor": 3, "sufijo": " seg", "etiqueta": "de audio bastan para *clonar una voz*", "icono": "robot", "tam": 220, "lineas": [{"texto": "Con IA bastan unos 3 segundos de tu voz, sacados de un video en redes, para clonarla."}]}, {"tipo": "chat", "modo": "peligro", "texto": "Así suena la estafa", "remitente": "Mamá", "detalle": "Nota de voz · ahora", "mensajes": [{"texto": "🎤 Mi amor, tuve un accidente, necesito dinero *YA*", "alerta": "Urgencia"}, {"texto": "No le digas a nadie, ¿sí?", "alerta": "Secreto"}, {"texto": "Mándalo a esta cuenta *nueva*", "alerta": "Cuenta nueva"}], "lineas": [{"texto": "Te pide dinero urgente."}, {"texto": "Te pide que no le cuentes a nadie."}, {"texto": "Y que lo mandes a una cuenta nueva."}]}, {"tipo": "titular", "modo": "peligro", "icono": "dinero", "texto": "*US$129 millones*", "sub": "fraude del que acusan a 3 hombres en EE. UU. imitando voces de directivos", "tam": 120, "lineas": [{"texto": "En EE. UU. acusan a 3 hombres de un fraude de más de 129 millones de dólares imitando voces.", "voz": "En Estados Unidos acusan a tres hombres de un fraude de más de ciento veintinueve millones de dólares, imitando voces."}]}, {"tipo": "escudo", "modo": "calma", "insignia": "Cómo protegerte", "texto": "Creen una *palabra clave* familiar", "sub": "y si dudas: cuelga y llama tú", "lineas": [{"texto": "La solución: acuerden una palabra clave en familia."}, {"texto": "Y si dudas, cuelga y llama tú al número de siempre."}]}, {"tipo": "cta", "modo": "calma", "insignia": "Cómo protegerte", "iconos": ["compartir", "guardar"], "texto": "Mándaselo a tu *familia*", "sub": "y elijan su palabra clave hoy", "lineas": [{"texto": "Mándale este video a tu familia y elijan su palabra clave hoy."}], "mascota": "feliz"}]};
+const SPEC = {"handle": "Brecha Invisible · ciberseguridad sin rollos", "fecha": "NOV 2026", "velocidad": 0.86, "id": "TEMA-03", "titulo": "Estafa con voz clonada por IA", "formato": "simulacion", "tema": "papel", "subtitulos": "barra", "transicion": "slide", "insignia": "Estafa con IA", "escenas": [{"tipo": "titular", "modo": "peligro", "icono": "telefono", "texto": "Si tu mamá te llama *llorando*…", "sub": "puede *no* ser tu mamá.", "lineas": [{"texto": "Si tu mamá te llama llorando pidiendo dinero…"}, {"texto": "…puede no ser tu mamá."}]}, {"tipo": "contador", "modo": "peligro", "valor": 3, "sufijo": " seg", "etiqueta": "de audio bastan para *clonar una voz*", "icono": "robot", "tam": 220, "lineas": [{"texto": "Con IA bastan unos 3 segundos de tu voz, sacados de un video en redes, para clonarla."}]}, {"tipo": "chat", "modo": "peligro", "texto": "Así suena la estafa", "remitente": "Mamá", "detalle": "Nota de voz · ahora", "mensajes": [{"texto": "🎤 Mi amor, tuve un accidente, necesito dinero *YA*", "alerta": "Urgencia"}, {"texto": "No le digas a nadie, ¿sí?", "alerta": "Secreto"}, {"texto": "Mándalo a esta cuenta *nueva*", "alerta": "Cuenta nueva"}], "lineas": [{"texto": "Te pide dinero urgente."}, {"texto": "Te pide que no le cuentes a nadie."}, {"texto": "Y que lo mandes a una cuenta nueva."}]}, {"tipo": "titular", "modo": "peligro", "icono": "dinero", "texto": "*US$129 millones*", "sub": "fraude del que acusan a 3 hombres en EE. UU. imitando voces de directivos", "tam": 120, "lineas": [{"texto": "En EE. UU. acusan a 3 hombres de un fraude de más de 129 millones de dólares imitando voces.", "voz": "En Estados Unidos acusan a tres hombres de un fraude de más de ciento veintinueve millones de dólares, imitando voces."}]}, {"tipo": "escudo", "modo": "calma", "insignia": "Cómo protegerte", "texto": "Creen una *palabra clave* familiar", "sub": "y si dudas: cuelga y llama tú", "lineas": [{"texto": "La solución: acuerden una palabra clave en familia."}, {"texto": "Y si dudas, cuelga y llama tú al número de siempre."}]}, {"tipo": "cta", "modo": "calma", "insignia": "Cómo protegerte", "iconos": ["compartir", "guardar"], "texto": "Mándaselo a tu *familia*", "sub": "y elijan su palabra clave hoy", "lineas": [{"texto": "Mándale este video a tu familia y elijan su palabra clave hoy."}], "agente": "guino"}], "marca": "Brecha Invisible"};
 const T = {
  "duration": 36.249,
  "lines": [
@@ -236,7 +310,8 @@ $("bg").className="bg bg-"+TH.fondo;
 if(TH.fondo==="blobs") $("bg").innerHTML=`<i style="background:${TH.peligro};left:-300px;top:100px"></i><i style="background:${TH.neutral};right:-300px;top:700px"></i><i style="background:${TH.acento};left:100px;top:1300px;opacity:.25"></i>`;
 if(!TH.scan) $("scanfx").style.display="none";
 $("cap").className=""; document.body.classList.add("cap-"+(SPEC.subtitulos||"caja"));
-$("date").textContent=SPEC.fecha||"";
+const MARCA=SPEC.marca===undefined?"Brecha Invisible":SPEC.marca;
+$("date").innerHTML=MARCA?`<span>${esc(MARCA)}</span><span class="mk">${agenteSVG("neutral",{id:"mk"})}</span>`:esc(SPEC.fecha||"");
 $("handle").textContent=SPEC.handle||"";
 const MODE=m=>TH[m]||TH.neutral;
 
@@ -428,14 +503,30 @@ const BUILD={
      const a=S.lines[ti]?S.lines[ti].start-.2:S.start+.2;const q=eb(p(tt,a,a+.35));
      bub.style.transform=`scale(${.6+.4*q})`;bub.style.opacity=clamp(q*1.5);};
  },
+ agente(el,sc,S,m){
+   const ex=sc.expresion||"neutral";
+   el.innerHTML=`<div class="col" style="gap:0;justify-content:flex-end;padding-bottom:0">
+     <div class="bub card" style="position:relative;background:var(--bg2);border-color:${m};border-width:5px;padding:34px 44px;max-width:900px;margin-bottom:34px">
+       <div class="h2" style="font-size:${sc.tam||64}px">${md(sc.texto||"")}</div>${sc.sub?`<div class="sub" style="margin-top:12px">${md(sc.sub)}</div>`:""}
+       <div style="position:absolute;left:50%;bottom:-34px;width:60px;height:60px;background:var(--bg2);border-right:5px solid ${m};border-bottom:5px solid ${m};transform:translateX(-50%) rotate(45deg)"></div></div>
+     <div class="ag" style="width:560px;height:560px;margin-bottom:-60px"></div></div>`;
+   const ag=el.querySelector(".ag"),bub=el.querySelector(".bub");
+   const svgs={};const get=(e,b)=>{const k=e+"|"+b;return svgs[k]||(svgs[k]=agenteSVG(e,{id:"as"+Math.random().toString(36).slice(2,6),brillo:b}));};
+   let last="";
+   return tt=>{const k=eb(p(tt,S.start,S.start+.5));ag.style.transform=`translateY(${(1-k)*300}px)`;
+     const on=p(tt,S.start+.35,S.start+.6);const fl=on<1?(Math.sin(tt*60)>0?1:.2)*on:1;const b=Math.round(fl*4)/4;
+     const e2=(sc.expresion2&&S.lines[1]&&tt>=S.lines[1].start-.15)?sc.expresion2:ex;const key=e2+b;
+     if(key!==last){ag.innerHTML=get(e2,b);last=key;}
+     const q=eb(p(tt,S.start+.45,S.start+.8));bub.style.opacity=clamp(q*1.5);bub.style.transform=`scale(${.6+.4*q})`;};
+ },
  cta(el,sc,S,m){
    const ic=sc.iconos||["guardar","compartir"];const cols=[TH.acento,TH.neutral,TH.calma];
    el.innerHTML=`<div class="col" style="gap:40px;padding-top:40px">
-     <div style="display:flex;gap:${sc.mascota?40:90}px;justify-content:center;align-items:flex-end">${sc.mascota?`<svg class="ci" viewBox="0 0 600 700" width="260" height="303">${visi(sc.mascota)}</svg>`:""}${ic.map((n,i)=>`<div class="ci">${ico(n,cols[i%3],sc.mascota?170:(ic.length>2?200:260))}</div>`).join("")}</div>
+     <div style="display:flex;gap:${(sc.mascota||sc.agente)?40:90}px;justify-content:center;align-items:flex-end">${sc.agente?`<div class="ci agc" style="width:330px;height:330px">${agenteSVG(sc.agente,{id:"cta"})}</div>`:""}${sc.mascota&&!sc.agente?`<svg class="ci" viewBox="0 0 600 700" width="260" height="303">${visi(sc.mascota)}</svg>`:""}${ic.map((n,i)=>`<div class="ci">${ico(n,cols[i%3],(sc.mascota||sc.agente)?170:(ic.length>2?200:260))}</div>`).join("")}</div>
      <div class="h1" style="font-size:${sc.tam||104}px">${md(sc.texto||"*Guárdalo* y compártelo")}</div>
      ${sc.sub?`<div class="h2" style="font-size:48px;color:var(--mute)">${md(sc.sub)}</div>`:""}</div>`;
-   const ci=[...el.querySelectorAll(".ci")];
-   return tt=>ci.forEach((e,i)=>{const q=eb(p(tt,S.start+i*.3,S.start+.45+i*.3));e.style.transform=`scale(${q}) translateY(${Math.sin(tt*5+i)*8}px)`;});
+   const ci=[...el.querySelectorAll(".ci")],cag=el.querySelector(".cag");
+   return tt=>{if(cag){const k=eb(p(tt,S.start,S.start+.5));cag.style.transform=`translateY(${(1-k)*200}px) rotate(${Math.sin(tt*2)*2}deg)`;}ci.forEach((e,i)=>{const q=eb(p(tt,S.start+i*.3,S.start+.45+i*.3));e.style.transform=`scale(${q}) translateY(${Math.sin(tt*5+i)*8}px)`;});};
  }
 };
 

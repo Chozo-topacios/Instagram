@@ -1,0 +1,96 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Agente Sombra</title>
+<script src="../motor/agente.js"></script>
+<style>
+*{margin:0;box-sizing:border-box}
+body{background:#000;font-family:Inter,"Inter Display",system-ui,sans-serif;color:#f4f7ff}
+.blk{position:relative;overflow:hidden}
+.grad{background:linear-gradient(90deg,#00e5ff,#8b6bff,#ff2e88);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* ficha */
+#ficha{width:2000px;padding:70px 80px;background:radial-gradient(1400px 700px at 50% 0%,#2a0f4a,#07030f 70%)}
+#ficha h1{font-size:96px;font-weight:900;letter-spacing:1px}
+#ficha .lema{font-size:40px;color:#c6b8ee;margin-top:6px;font-weight:600}
+.top{display:flex;gap:60px;align-items:center;margin-bottom:50px}
+.hero{width:520px;height:520px;flex:none;border-radius:50%;background:radial-gradient(circle at 50% 40%,#ff2e8888,#3a1460 50%,#07030f 75%)}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:22px 40px;margin-top:34px}
+.info div{font-size:27px;line-height:1.4;color:#d7d0ef}
+.info b{display:block;font-size:22px;letter-spacing:3px;color:#ff7ab8;text-transform:uppercase;margin-bottom:4px}
+.exprs{display:flex;gap:26px;justify-content:space-between}
+.ex{flex:1;background:#110a20;border:2px solid #2a1d47;border-radius:28px;padding:18px;text-align:center}
+.ex .a{height:250px;border-radius:20px;background:radial-gradient(circle at 50% 45%,#2a1450,#0b0616 75%)}
+.ex .a svg,.hero svg{width:100%;height:100%}
+.ex .k{font-size:28px;font-weight:900;margin-top:12px}
+.ex .u{font-size:19px;color:#a99bc9;margin-top:4px}
+/* perfil */
+.pf{width:1080px;height:1080px}
+/* destacadas */
+.hl{width:1080px;height:1920px;display:flex;align-items:center;justify-content:center}
+</style></head><body>
+
+<div id="ficha" class="blk">
+ <div class="top">
+  <div class="hero" id="hero"></div>
+  <div>
+   <div style="font-size:30px;letter-spacing:6px;color:#8d9bc0;font-weight:800">BRECHA INVISIBLE · PERSONAJE</div>
+   <h1>Agente <span class="grad">Sombra</span></h1>
+   <div class="lema">"Hacemos visible lo invisible."</div>
+   <div class="info">
+    <div><b>Quién es</b>Detective de ciberseguridad. Nunca se le ve la cara: solo sus lentes, que cambian de color según lo que detecta.</div>
+    <div><b>Personalidad</b>Calmado, elegante y directo. Algo de misterio y humor seco. Nunca asusta: explica y protege.</div>
+    <div><b>Cómo habla</b>Tutea, frases cortas, cero tecnicismos. Como un amigo que sabe mucho y te cuida la espalda.</div>
+    <div><b>Frases firma</b>Apertura: "Lo que no ves también te puede robar." · Cierre: "Aquí el Agente Sombra. Nos vemos donde nadie mira."</div>
+   </div>
+  </div>
+ </div>
+ <div class="exprs" id="exprs"></div>
+</div>
+
+<div id="perfil" class="blk pf"></div>
+<div id="perfil-nombre" class="blk pf"></div>
+
+<div id="hl-alertas" class="blk hl"></div>
+<div id="hl-estafa" class="blk hl"></div>
+<div id="hl-trucos" class="blk hl"></div>
+<div id="hl-mitos" class="blk hl"></div>
+<div id="hl-agente" class="blk hl"></div>
+
+<script>
+document.getElementById("hero").innerHTML=agenteSVG("lupa",{id:"h"});
+const EX=[["neutral","Neutral","Presentar un tema"],["alerta","Alerta","Ganchos y peligros"],["calma","Calma","Soluciones"],["guino","Guiño","Cierre / CTA"],["lupa","Investigando","Analizar una estafa"],["pensando","Pensando","Mitos y preguntas"]];
+document.getElementById("exprs").innerHTML=EX.map(([e,k,u],i)=>`<div class="ex"><div class="a">${agenteSVG(e,{id:"e"+i})}</div><div class="k">${k}</div><div class="u">${u}</div></div>`).join("");
+
+const ringDefs=`<defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00e5ff"/><stop offset=".5" stop-color="#8b6bff"/><stop offset="1" stop-color="#ff2e88"/></linearGradient>
+<radialGradient id="bgp" cx="50%" cy="38%" r="62%"><stop offset="0" stop-color="#ff2e88" stop-opacity=".75"/><stop offset=".38" stop-color="#4a1580"/><stop offset=".75" stop-color="#12061f"/><stop offset="1" stop-color="#05020b"/></radialGradient>
+<filter id="rgf" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<pattern id="rain" width="54" height="54" patternUnits="userSpaceOnUse"><text x="6" y="30" font-family="DejaVu Sans Mono,monospace" font-size="22" fill="#8b6bff" fill-opacity=".16">01</text></pattern>
+<path id="arcTop" d="M170 540 A370 370 0 0 1 910 540"/><path id="arcBot" d="M200 600 A345 345 0 0 0 880 600"/></defs>`;
+function perfil(nombre){
+ return `<svg viewBox="0 0 1080 1080" width="1080" height="1080">${ringDefs}
+ <clipPath id="cl${nombre?1:0}"><circle cx="540" cy="540" r="${nombre?458:470}"/></clipPath>
+ <rect width="1080" height="1080" fill="url(#bgp)"/><rect width="1080" height="1080" fill="url(#rain)"/>
+ <circle cx="540" cy="540" r="${nombre?505:480}" fill="none" stroke="url(#rg)" stroke-width="${nombre?90:18}" ${nombre?'opacity=".95"':'filter="url(#rgf)"'}/>
+ ${nombre?`<circle cx="540" cy="540" r="458" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="3"/>
+   <text font-family="Inter,sans-serif" font-weight="900" font-size="58" letter-spacing="10" fill="#fff"><textPath href="#arcTop" startOffset="50%" text-anchor="middle">BRECHA INVISIBLE</textPath></text>`:""}
+ <g clip-path="url(#cl${nombre?1:0})"><g transform="translate(${nombre?105:60} ${nombre?150:110}) scale(${nombre?1.45:1.6})">${agenteSVG("neutral",{id:nombre?"pn":"p"})}</g></g>
+ </svg>`;
+}
+document.getElementById("perfil").innerHTML=perfil(false);
+document.getElementById("perfil-nombre").innerHTML=perfil(true);
+
+const IC={
+ alertas:'<path d="M100 22 L182 170 H18 Z" fill="none" stroke="#fff" stroke-width="14" stroke-linejoin="round"/><rect x="92" y="70" width="16" height="56" rx="7" fill="#fff"/><circle cx="100" cy="147" r="10" fill="#fff"/>',
+ estafa:'<path d="M112 20 V122 a38 38 0 1 1 -76 0 V108" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/><path d="M36 108 L22 128 M36 108 L52 126" stroke="#fff" stroke-width="12" stroke-linecap="round"/><circle cx="112" cy="20" r="10" fill="#fff"/><rect x="128" y="40" width="54" height="36" rx="6" fill="none" stroke="#fff" stroke-width="10"/><path d="M128 44 L155 62 L182 44" fill="none" stroke="#fff" stroke-width="8"/>',
+ trucos:'<circle cx="64" cy="100" r="36" fill="none" stroke="#fff" stroke-width="14"/><path d="M100 100 H178 M150 100 V130 M174 100 V122" stroke="#fff" stroke-width="14" stroke-linecap="round"/>',
+ mitos:'<path d="M30 60 L80 110 M80 60 L30 110" stroke="#fff" stroke-width="16" stroke-linecap="round"/><path d="M110 92 L134 116 L176 64" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><path d="M100 30 V170" stroke="#fff" stroke-width="6" opacity=".5"/>'
+};
+const HL=[["hl-alertas","#ff3b5c","#ff7a45","alertas"],["hl-estafa","#ff2e88","#8b6bff","estafa"],["hl-trucos","#2ee59d","#00e5ff","trucos"],["hl-mitos","#8b6bff","#00e5ff","mitos"],["hl-agente","#00e5ff","#ff2e88","agente"]];
+HL.forEach(([id,a,b,k])=>{
+ const inner = k==="agente"
+  ? `<clipPath id="hlc"><circle cx="540" cy="540" r="500"/></clipPath><g clip-path="url(#hlc)"><g transform="translate(90 120) scale(1.5)">${agenteSVG("guino",{id:"hlag"})}</g></g>`
+  : `<g transform="translate(300 300) scale(2.4)">${IC[k]}</g>`;
+ document.getElementById(id).innerHTML=`<svg viewBox="0 0 1080 1920" width="1080" height="1920">
+  <defs><linearGradient id="g${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>
+  <rect width="1080" height="1920" fill="#0a0614"/>
+  <g transform="translate(0 420)"><circle cx="540" cy="540" r="500" fill="url(#g${id})"/>
+  <circle cx="540" cy="540" r="440" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="6"/>${inner}</g></svg>`;
+});
+</script></body></html>

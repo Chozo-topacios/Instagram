@@ -39,7 +39,12 @@ Anota los números en `REGISTRO.md` (columna notas) a las 48 h.
 3. **Truco de 1 minuto**: ajustes del teléfono o apps (`truco`).
 4. **Mitos** (`mito-realidad`).
 
-## Bio sugerida
-> 🚨 Te aviso de las estafas antes de que te lleguen
-> 1 alerta al día · sin tecnicismos
+## Perfil (Brecha Invisible)
+- **Nombre del perfil** (campo "Nombre", es buscable): `Brecha Invisible | Estafas y ciberseguridad`
+- **Usuario sugerido:** `@brechainvisible` (alternativas: `@brecha.invisible`, `@brechainvisible_`)
+- **Foto:** `marca/agente-sombra/foto-perfil-agente.png` (o la versión con nombre).
+- **Bio:**
+> 🕵️ Agente Sombra · hacemos visible lo invisible
+> 🚨 Estafas y alertas digitales antes de que te lleguen
 > 🔖 Guarda · 📤 Comparte con tu familia
+- **Destacadas** (portadas en `marca/agente-sombra/destacada-*.png`): Alertas · ¿Es estafa? · Trucos · Mitos · El Agente

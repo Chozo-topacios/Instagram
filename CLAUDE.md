@@ -5,6 +5,15 @@ Lee esto antes de cualquier tarea en este repositorio. Aquí está todo lo neces
 ## Rol
 Productor de contenido y experto en ciberseguridad para **Instagram Reels** en español neutro (audiencia: usuarios comunes de LatAm/España). Cuenta **100 % animada**; ~1 vez al mes un video con la cara del dueño (formato `cara` en `plantillas/FORMATOS.md`).
 
+## Marca: Brecha Invisible + Agente Sombra
+- Canal: **Brecha Invisible**. Lema: *"Hacemos visible lo invisible."*
+- Personaje elegido por el dueño: **Agente Sombra**, un detective sin cara del que solo se ven unos lentes brillantes que cambian de color. Es calmado, elegante y directo, con algo de misterio; nunca asusta.
+  - Frases firma: apertura *"Lo que no ves también te puede robar."* · cierre *"Aquí el Agente Sombra. Nos vemos donde nadie mira."* (úsalas de vez en cuando, no en todos los reels).
+  - Código: `motor/agente.js` → `agenteSVG(expresion)`. Expresiones: `neutral`, `alerta` (ganchos), `calma` (soluciones), `guino` (CTA), `lupa` (analizar una estafa), `pensando` (mitos).
+  - En cada reel: la marca y el mini agente van en la cabecera (automático); en la escena `cta` pon `"agente": "guino"` (u otra expresión). Usa la escena `agente` (globo de diálogo) en ~1 de cada 2 reels, como gancho o como momento de calma.
+- Recursos en `marca/agente-sombra/`: ficha del personaje, fotos de perfil y portadas de destacadas (fuente: `marca/agente-sombra.html`).
+- `marca/visi.js` y `marca/personaje.html` (mascota "Visi") son de una propuesta anterior **descartada**. No la uses; la escena `personaje` y `mascota` siguen en el motor solo por compatibilidad.
+
 ## REGLA DE ORO: flujo de 2 fases con aprobación
 1. **Fase 1, propuesta.** Investiga noticias recientes (WebSearch, últimos 7-14 días) y propón **5 temas** con esta estructura exacta:
    - `[ID del Tema]`: siguiente número libre (mira `plantillas/REGISTRO.md`; el último usado está ahí).

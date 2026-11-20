@@ -13,6 +13,7 @@ Un reel = `reel.json` = ajustes globales + lista de **escenas**. Cada escena tie
 | `transicion` | `fade`, `slide`, `zoom`, `glitch` | entrada y salida de escenas |
 | `insignia` | texto | etiqueta superior por defecto (cada escena puede cambiarla) |
 | `handle`, `fecha` | texto | el handle aparece en la escena `cta` |
+| `marca` | texto (def. `Brecha Invisible`) | nombre + mini agente en la cabecera; `""` muestra `fecha` en su lugar |
 | `velocidad` | 0.80-0.95 | ritmo de la voz (menor = más rápido) |
 
 Cada escena admite además `modo`: `peligro` (rojo) · `calma` (verde) · `neutral` (azul o violeta), que define el color de acento de la escena, y `insignia` opcional.
@@ -34,13 +35,17 @@ Cada escena admite además `modo`: `peligro` (rojo) · `calma` (verde) · `neutr
 | `mito` | Mito contra realidad | `mito`, `realidad`, `texto?`, `etiqueta_mito?`, `etiqueta_realidad?` (2 líneas: mito, luego realidad) |
 | `top` | Ranking o señales (cuenta atrás 3-2-1) | `texto?`, `items[]: {t, d?, icono?}`, `cuenta_atras?` (def. true) |
 | `escudo` | Momento de calma / solución | `texto`, `sub?` |
-| `cta` | Cierre | `texto`, `sub?`, `iconos?` (de `guardar`, `compartir`, `seguir`), `tam?` |
+| `cta` | Cierre | `texto`, `sub?`, `iconos?` (de `guardar`, `compartir`, `seguir`), `tam?`, **`agente?`** (expresión del Agente Sombra, normalmente `guino`) |
+| `agente` | El Agente Sombra habla con un globo de diálogo (gancho, calma, reflexión) | `expresion` (`neutral`/`alerta`/`calma`/`guino`/`lupa`/`pensando`), `expresion2?` (cambia al empezar la 2.ª línea), `texto`, `sub?`, `tam?` (px, def. 64) |
 
 **Iconos disponibles:** `alerta candado anzuelo robot paquete mensaje wifi llave ojo dinero usuario escudo tarjeta telefono bomba regalo x check guardar compartir seguir`
 
 ## 3. Formatos (estructuras probadas)
 
 Duración objetivo: **30-45 s**, de 5 a 7 escenas.
+
+### `agente-habla`: el Agente presenta el caso
+`agente(alerta→lupa, gancho en el globo)` → `chat`/`contador` → `mito` o `tarjeta` → `agente(calma, solución)` → `checklist` → `cta(agente: guino)`
 
 ### `alerta`: noticia urgente (ej. TEMA-01)
 `titular(peligro, gancho pregunta)` → `contador` (alcance) → `tarjeta`/`telefono` (qué roban) → `escudo(calma)` → `checklist` → `cta`
