@@ -79,6 +79,7 @@
 <audio id="aud" src="voz.mp3" preload="auto"></audio>
 
 <script>
+/*__VISI__*/
 const SPEC = __SPEC__;
 const T = __TIMINGS__;
 const $ = id => document.getElementById(id);
@@ -276,10 +277,31 @@ const BUILD={
      a.style.opacity=p(tt,S.start+.1,S.start+.4);
      if(b){const tb=S.lines[1]?S.lines[1].start-.1:S.start+1.2;b.style.opacity=p(tt,tb,tb+.3);b.style.transform=`scale(${.85+.15*eb(p(tt,tb,tb+.4))})`;}};
  },
+ personaje(el,sc,S,m){
+   /* Visi habla: globo de texto + mascota. expresiones[] cambia por línea; textos[] cambia el globo por línea */
+   const tx=sc.textos||[sc.texto||""];
+   el.innerHTML=`<div class="col" style="gap:10px">
+     <div class="card bub" style="position:relative;padding:34px 44px;max-width:900px;border-color:${m};background:var(--panel)">
+       <div class="h2 bt" style="font-size:${sc.tam||64}px">${md(tx[0])}</div>
+       <div style="position:absolute;left:50%;bottom:-34px;width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-top:34px solid ${m};transform:translateX(-50%)"></div></div>
+     <svg class="vs" viewBox="0 0 600 700" width="${sc.tam_personaje||560}" height="${(sc.tam_personaje||560)*7/6}"></svg></div>`;
+   const vs=el.querySelector(".vs"),bub=el.querySelector(".bub"),bt=el.querySelector(".bt");let last="",lastT=-1;
+   return tt=>{
+     let li=0;S.lines.forEach((l,i)=>{if(tt>=l.start-.15)li=i;});
+     const ex=(sc.expresiones&&sc.expresiones[Math.min(li,sc.expresiones.length-1)])||sc.expresion||"neutral";
+     const ph=(tt*1.3)%3.2;const bl=ph<.12?Math.max(.1,Math.abs(1-ph/.06)):1;
+     const key=ex+"|"+bl.toFixed(2);
+     if(key!==last){last=key;vs.innerHTML=visi(ex,{parpadeo:bl<1?bl:0});}
+     const k=eb(p(tt,S.start,S.start+.5));
+     vs.style.transform=`translateY(${(1-k)*300+Math.sin(tt*3)*12}px) rotate(${Math.sin(tt*2)*3}deg)`;vs.style.opacity=clamp(k*2);
+     const ti=Math.min(li,tx.length-1);if(ti!==lastT){lastT=ti;bt.innerHTML=md(tx[ti]);}
+     const a=S.lines[ti]?S.lines[ti].start-.2:S.start+.2;const q=eb(p(tt,a,a+.35));
+     bub.style.transform=`scale(${.6+.4*q})`;bub.style.opacity=clamp(q*1.5);};
+ },
  cta(el,sc,S,m){
    const ic=sc.iconos||["guardar","compartir"];const cols=[TH.acento,TH.neutral,TH.calma];
    el.innerHTML=`<div class="col" style="gap:40px;padding-top:40px">
-     <div style="display:flex;gap:90px;justify-content:center">${ic.map((n,i)=>`<div class="ci">${ico(n,cols[i%3],ic.length>2?200:260)}</div>`).join("")}</div>
+     <div style="display:flex;gap:${sc.mascota?40:90}px;justify-content:center;align-items:flex-end">${sc.mascota?`<svg class="ci" viewBox="0 0 600 700" width="260" height="303">${visi(sc.mascota)}</svg>`:""}${ic.map((n,i)=>`<div class="ci">${ico(n,cols[i%3],sc.mascota?170:(ic.length>2?200:260))}</div>`).join("")}</div>
      <div class="h1" style="font-size:${sc.tam||104}px">${md(sc.texto||"*Guárdalo* y compártelo")}</div>
      ${sc.sub?`<div class="h2" style="font-size:48px;color:var(--mute)">${md(sc.sub)}</div>`:""}</div>`;
    const ci=[...el.querySelectorAll(".ci")];

@@ -1,5 +1,5 @@
 {
- "handle": "@tu_cuenta",
+ "handle": "Brecha Invisible · ciberseguridad sin rollos",
  "fecha": "NOV 2026",
  "velocidad": 0.86,
  "id": "TEMA-03",
@@ -114,7 +114,8 @@
     {
      "texto": "Mándale este video a tu familia y elijan su palabra clave hoy."
     }
-   ]
+   ],
+   "mascota": "feliz"
   }
  ]
 }

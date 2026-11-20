@@ -1,5 +1,5 @@
 {
- "handle": "@tu_cuenta",
+ "handle": "Brecha Invisible · ciberseguridad sin rollos",
  "fecha": "NOV 2026",
  "velocidad": 0.86,
  "id": "TEMA-04",
@@ -132,7 +132,8 @@
     {
      "texto": "Guárdalo y compártelo con quien está esperando un paquete."
     }
-   ]
+   ],
+   "mascota": "guino"
   }
  ]
 }
